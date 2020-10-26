@@ -2,11 +2,11 @@
 
 ## IIngredient
 
-IIngredient ，材料接口，可以简单理解为既能是物品，也能是标签。
+IIngredient ，材料接口，可以简单理解为既能是物品，也能是标签。如果你看见了 IIngredient，则意味着这里既能填物品，也能填标签。
 
 ## 工作台配方
 
-不是 1.12 的 `recipe.addShaped` 的了，而是 `craftingTable.addShaped` 了。
+不是 1.12 的 `recipes.addShaped` 的了，而是 `craftingTable.addShaped` 了。
 
 ### 有序合成
 
@@ -14,7 +14,7 @@ IIngredient ，材料接口，可以简单理解为既能是物品，也能是�
 
 * recipeName 是一个字符串，指定配方的名称（1.12 可省略，现在必须填！）
 * output 是配方的输出，只能是物品，不能是标签
-* inputBox 是材料的二维数组，指定配方输入（没必要填满 3 * 3 的）
+* inputBox 是 IIngredient 的二维数组，指定配方输入（没必要填满 3 * 3 的）
 
 ```javascript
 craftingTable.addShaped("recipe_test", <item:minecraft:dirt>, [
@@ -42,8 +42,81 @@ craftingTable.addShapeless("recipe_name", <item:minecraft:sand>, [<item:minecraf
 
 | 基本格式                             | 作用                             |
 | ------------------------------------ | -------------------------------- |
-| `craftingTable.removeRecipe(output);` | 删除物品的合成                   |
+| `craftingTable.removeRecipe(output);` | 删除特定物品的合成                 |
 | `craftingTable.removeByName(name);`   | 删除特定名称的配方               |
 | `craftingTable.removeByModid(modid);` | 删除特定模组的全部配方           |
 | `craftingTable.removeByRegex(modid);` | 删除名称匹配正则表达式的所有配方 |
 | `craftingTable.removeAll();`          | 删除全部配方                     |
+
+## 熔炉
+
+### 添加合成
+
+```javascript
+furnace.addRecipe(name, output, input, xp, cookTime);
+
+furnace.addRecipe("wool2diamond", <item:diamond>, <tag:minecraft:wool>, 1.0, 0);
+```
+
+* name: 字符串，配方名
+
+* output: 物品，配方输出
+
+* input: IIngredient，配方输入
+
+* xp: 双精度浮点数，该配方产生的经验值
+
+* cookTime: 整数，配方所需时间（如果填 0 ，则取缺省值 200）
+
+### 移除合成
+
+| 基本格式                             | 作用                             |
+| ------------------------------------ | -------------------------------- |
+| `furance.removeRecipe(output, input);` | 删除一个特定配方（input 为 材料）                 |
+| `furance.removeRecipe(output);` | 删除特定物品的配方                 |
+| `furance.removeByName(name);` | 删除特定名称的配方               |
+| `furance.removeByModid(modid);` | 删除特定模组的全部配方           |
+| `furance.removeByRegex(modid);` | 删除名称匹配正则表达式的所有配方 |
+| `furance.removeAll();`  | 删除全部配方                     |
+
+### 熔炉变种
+
+烟熏炉把 `furance` 换成 `smoker`，高炉换成 `blastFurnace` 即可。
+
+## 营火
+
+### 添加合成
+
+```javascript
+campfire.addRecipe(name, output, input, xp, cookTime);
+
+campfire.addRecipe("wool2diamond", <item:diamond>, <tag:minecraft:wool>, 1.0, 0);
+```
+
+* name: 字符串，配方名
+* output: 物品，配方输出
+* input: IIngredient，配方输入
+* xp: 双精度浮点数，该配方产生的经验值
+* cookTime: 整数，配方所需时间（如果填 0 ，则取缺省值 100）
+
+### 移除合成
+
+与熔炉基本相同，把 `furance` 改成 `campfire` 即可。
+
+## 切石机
+
+### 添加合成
+
+```javascript
+stoneCutter.addRecipe(recipeName, output, input);
+
+stoneCutter.addRecipe("recipe_name", <item:minecraft:grass>, <tag:minecraft:wool>);
+```
+
+* name: 字符串，配方名
+* output: 物品，配方输出
+* input: IIngredient，配方输入
+
+### 移除合成
+
+与工作台基本相同，把 `craftingTable` 改成 `stoneCutter` 即可。
