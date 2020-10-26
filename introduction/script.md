@@ -2,7 +2,7 @@
 
 ### ZenCode
 
-CraftTweaker 提供了一个脚本语言来进行操作。在 1.12 及其以前的 MC 版本中这个语言叫做 ZenScript。而在 1.15+ 后 ZenScript 被 ZenCode 取代，语法与先前有所不同，也比之前提供了更多的特性。在 ZenCode 章节会对其进行更多的解释。
+CraftTweaker 提供了一个脚本语言来进行操作。在 1.12 及其以前的 MC 版本中这个语言叫做 ZenScript。而在 1.14 后 ZenScript 被 ZenCode 取代，语法与先前有所不同，也比之前提供了更多的特性。在 ZenCode 章节会对其进行更多的解释。
 
 ### scripts 文件夹
 
