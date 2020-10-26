@@ -7,13 +7,13 @@
 * [脚本](introduction/script.md)
 * [指令](introduction/command.md)
 
-## 配方
+## 配方 <a id="recipe"></a>
 
-* [物品](pei-fang/itemstack.md)
-* [标签](pei-fang/tag.md)
-* [原版配方修改](pei-fang/vanilla-tweak.md)
-* [模组配方修改](pei-fang/mod-tweak.md)
-* [IData](pei-fang/idata.md)
+* [物品](recipe/itemstack.md)
+* [标签](recipe/tag.md)
+* [原版配方修改](recipe/vanilla-tweak.md)
+* [模组配方修改](recipe/mod-tweak.md)
+* [IData](recipe/idata.md)
 
 ## ZenCode
 
