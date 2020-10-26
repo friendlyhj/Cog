@@ -38,7 +38,7 @@ craftingTable.addShapeless("recipe_name", <item:minecraft:sand>, [<item:minecraf
 
 ` craftingTable.addShapedMirrored(recipeName, output, inputBox);`
 
-### 移除配方
+### 移除合成
 
 | 基本格式                             | 作用                             |
 | ------------------------------------ | -------------------------------- |
@@ -50,7 +50,7 @@ craftingTable.addShapeless("recipe_name", <item:minecraft:sand>, [<item:minecraf
 
 ## 熔炉
 
-### 添加合成
+### 添加配方
 
 ```javascript
 furnace.addRecipe(name, output, input, xp, cookTime);
@@ -68,7 +68,7 @@ furnace.addRecipe("wool2diamond", <item:diamond>, <tag:minecraft:wool>, 1.0, 0);
 
 * cookTime: 整数，配方所需时间（如果填 0 ，则取缺省值 200）
 
-### 移除合成
+### 移除配方
 
 | 基本格式                             | 作用                             |
 | ------------------------------------ | -------------------------------- |
@@ -85,7 +85,7 @@ furnace.addRecipe("wool2diamond", <item:diamond>, <tag:minecraft:wool>, 1.0, 0);
 
 ## 营火
 
-### 添加合成
+### 添加配方
 
 ```javascript
 campfire.addRecipe(name, output, input, xp, cookTime);
@@ -99,13 +99,13 @@ campfire.addRecipe("wool2diamond", <item:diamond>, <tag:minecraft:wool>, 1.0, 0)
 * xp: 双精度浮点数，该配方产生的经验值
 * cookTime: 整数，配方所需时间（如果填 0 ，则取缺省值 100）
 
-### 移除合成
+### 移除配方
 
 与熔炉基本相同，把 `furance` 改成 `campfire` 即可。
 
 ## 切石机
 
-### 添加合成
+### 添加配方
 
 ```javascript
 stoneCutter.addRecipe(recipeName, output, input);
@@ -117,6 +117,6 @@ stoneCutter.addRecipe("recipe_name", <item:minecraft:grass>, <tag:minecraft:wool
 * output: 物品，配方输出
 * input: IIngredient，配方输入
 
-### 移除合成
+### 移除配方
 
 与工作台基本相同，把 `craftingTable` 改成 `stoneCutter` 即可。
