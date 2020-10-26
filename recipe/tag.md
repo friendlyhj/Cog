@@ -8,7 +8,7 @@
 
 ## 导出
 
-你可以用指令 `/ct dump tags 导出游戏内所有 Tag ID。前者生成在 crafttweaker.log。这里有个问题，日志里打印的只是 ID，而非 zs 使用的尖括号调用。
+你可以用指令 `/ct dump tags` 导出游戏内所有 Tag ID。前者生成在 crafttweaker.log。这里有个问题，日志里打印的只是 ID，而非 zs 使用的尖括号调用。
 
 ## 尖括号调用
 
