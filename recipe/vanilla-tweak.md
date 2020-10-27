@@ -46,7 +46,7 @@ craftingTable.addShapeless("recipe_name", <item:minecraft:sand>, [<item:minecraf
 | `craftingTable.removeByName(name);`   | 删除特定名称的配方               |
 | `craftingTable.removeByModid(modid);` | 删除特定模组的全部配方           |
 | `craftingTable.removeByRegex(modid);` | 删除名称匹配正则表达式的所有配方 |
-| `craftingTable.removeAll();`          | 删除全部配方                     |
+| `craftingTable.removeAll();` | 删除全部配方                     |
 
 ## 熔炉
 
@@ -120,3 +120,14 @@ stoneCutter.addRecipe("recipe_name", <item:minecraft:grass>, <tag:minecraft:wool
 ### 移除配方
 
 与工作台基本相同，把 `craftingTable` 改成 `stoneCutter` 即可。
+
+## NBT
+
+与 1.12 相同，你依旧可以用 `withTag` 来标记物品的 NBT，并将其作为配方的输入输出。
+
+```javascript
+val a = <item:minecraft:iron_ingot>.withTag({display: {Lore: ["233"]}});
+
+craftingTable.addShapeless("ttt", <item:minecraft:sand>, [a, a, a]);
+```
+

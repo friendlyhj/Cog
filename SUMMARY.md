@@ -25,3 +25,7 @@
 * [函数](zencode/function.md)
 * [lambda 表达式](zencode/lambda.md)
 
+## 高级运用
+
+* [IData](advanced/idata.md)
+* [配方函数](advanced/recipe-function.md)

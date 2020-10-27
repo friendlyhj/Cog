@@ -81,3 +81,6 @@ val runicAltar = <recipetype:botania:runic_altar>;
 runicAltar.removeByName("botania:spring"); // 当然用变量也可以了
 ```
 
+## 不兼容 NBT
+
+综上所述，对模组配方的兼容是通过数据包实现的。而众所周知，数据包配方不支持 NBT。所以就有一大遗憾，模组的配方添加将不再兼容 NBT，对于 NBT 有额外支持的 Recipe Type 例外。
