@@ -4,6 +4,8 @@
 
 IIngredient ，材料接口，可以简单理解为既能是物品，也能是标签。如果你看见了 IIngredient，则意味着这里既能填物品，也能填标签。
 
+如果你需要声明数组，你需要 `import` ： `import crafttweaker.api.item.IIngredient`
+
 ## 工作台配方
 
 不是 1.12 的 `recipes.addShaped` 的了，而是 `craftingTable.addShaped` 了。
@@ -82,6 +84,14 @@ furnace.addRecipe("wool2diamond", <item:diamond>, <tag:minecraft:wool>, 1.0, 0);
 ### 熔炉变种
 
 烟熏炉把 `furance` 换成 `smoker`，高炉换成 `blastFurnace` 即可。
+
+### 熔炉燃料
+
+`item.burnTime = value;`
+
+`<item:minecraft:diamond>.burnTime = 10000;`
+
+将钻石的燃料时间改为 10000，如果设置为 0 则为删除。
 
 ## 营火
 

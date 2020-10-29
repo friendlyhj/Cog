@@ -4,6 +4,12 @@
 
 你可以用指令 `/ct dump items` 或者 `/ct dumpdumpBrackets` 导出游戏内所有物品 ID。前者生成在 crafttweaker.log 里，后者在 ct_dumps/item.txt
 
+## Import
+
+如果你需要声明数组，请记得 `import`：
+
+`import crafttweaker.api.item.IItemStack;`
+
 ## Nonnull
 
 与以前的版本不同，IItemStack 现在是 Nonnull 的，你不能把它设置为 null。也就是说，添加合成时空的位置以前填 `null`，现在得写成 `<item:minecraft:air>`。

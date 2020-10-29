@@ -9,6 +9,8 @@
 - 数组里的元素具有顺序，可重复。
 
 ```javascript
+import crafttweaker.api.item.IItemStack;
+
 var int_array1 as int[] = [];
 // 定义一个 int 类型的数组，没有初始元素
 
@@ -29,7 +31,6 @@ var items as IItemStack[] = [<item:minecraft:apple>, <item:minecraft:carrot>];
 ```javascript
 var numbers as int[] = [10,20,20]; // 定义一个数组
 numbers[2] = 30; // 将下标为 2 的元素修改为 30 
-number += 40; // 往数组的末尾添加一个元素
 ```
 
 - 数组有一个`length`属性，返回数组的元素个数。
@@ -39,17 +40,17 @@ var array as int[] = [2,4,6,8];
 print(array.length); // array 的元素个数为 4，输出 4
 ```
 
-<!--
-
 ## 多维数组
 
-你用过`recipes.addShaped()`吗？它的参数里面就有一个多维数组。准确的来说，是一个二维数组。
+你用过`craftingTable.addShaped()`吗？它的参数里面就有一个多维数组。准确的来说，是一个二维数组。
 
 ```javascript
-var gold as IItemStack = <item:minecraft;
-var <minecraft:apple> as IItemStack = apple;
+import crafttweaker.api.item.IItemStack;
 
-recipes.addShaped("golden_apple", <minecraft:golden_apple>,
+var gold as IItemStack = <item:minecraft:gold_ingot>;
+var apple as IItemStack = <item:minecraft:apple>;
+
+craftingTable.addShaped("golden_apple", <minecraft:golden_apple>,
     [[gold,gold,gold],
      [gold,apple,gold],
      [gold,gold,gold]]
@@ -57,7 +58,6 @@ recipes.addShaped("golden_apple", <minecraft:golden_apple>,
 ```
 
 在上面的示例中，二维数组的第一个元素，是一个一维数组，即九宫格的第一行`[gold,gold,gold]`。
- -->
 
 
 二维数组的操作和一维数组的操作相似。
