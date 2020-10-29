@@ -1,11 +1,11 @@
-# Map（映射、关联数组）
+# 映射
 
-Map 是集合的一种，也称作映射、关联数组等。特点是存储的数据为键值对(Key-Value)，key（键）和 value（值）一一对应。
+Map 是集合的一种，也称作映射、关联数组等。特点是存储的数据为键值对\(Key-Value\)，key（键）和 value（值）一一对应。
 
-> - Map 没有下标，取代下标的是 key（键）
-> - 你可以用 ZenCode 的任何类型作为 key
-> - 键值对的形式为 key: value，键在前，值在后
-> - 数组可以作为 value，但不可以作为 key
+> * Map 没有下标，取代下标的是 key（键）
+> * 你可以用 ZenCode 的任何类型作为 key
+> * 键值对的形式为 key: value，键在前，值在后
+> * 数组可以作为 value，但不可以作为 key
 
 ## 定义与访问
 
@@ -47,7 +47,6 @@ map[2] = "two"; // 修改
 map[3] = "three"; // 修改
 map[4] = "four"; // 添加
 map[5] = "five"; // 添加
-
 ```
 
 ## 遍历
@@ -73,3 +72,4 @@ for key, value in map {
     println("" + key + "-->" + value); // 输出 1-->one, 2-->two, 3-->three, 4-->four
 }
 ```
+

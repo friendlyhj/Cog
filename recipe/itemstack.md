@@ -2,7 +2,7 @@
 
 ## 导出
 
-你可以用指令 `/ct dump items` 或者 `/ct dumpdumpBrackets` 导出游戏内所有物品 ID。前者生成在 crafttweaker.log 里，后者在 ct_dumps/item.txt
+你可以用指令 `/ct dump items` 或者 `/ct dumpdumpBrackets` 导出游戏内所有物品 ID。前者生成在 crafttweaker.log 里，后者在 ct\_dumps/item.txt
 
 ## Import
 
@@ -17,3 +17,4 @@
 ## 不可省略的 item 尖括号调用
 
 在 1.12 中，你可以用 `<minecraft:iron_ingot>` 这样表示一个物品。实际上你省略了最前面的 `item:`。而现在这个不可以省略了。你必须打成 `<item:minecraft:iron_ingot>`
+

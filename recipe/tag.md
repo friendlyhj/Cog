@@ -16,7 +16,7 @@
 
 ## 尖括号调用
 
-标签在 zs 的尖括号调用以 `tag` 开头： `<tag:forge:ingots/copper>` => 铜锭
+标签在 zs 的尖括号调用以 `tag` 开头： `<tag:forge:ingots/copper>` =&gt; 铜锭
 
 ## 修改
 
@@ -55,3 +55,4 @@ craftingTable.addShapeless("new_tag_test", <item:minecraft:diamond>, [<tag:craft
 // 石头将抵御凋灵爆炸
 // 方块状态尖括号调用不能直接指令导出
 ```
+

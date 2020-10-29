@@ -1,4 +1,4 @@
-# switch-case
+# switch
 
 switch-case 是一种特殊的条件语句，用于给程序设置分支。
 
