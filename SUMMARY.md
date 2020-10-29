@@ -17,6 +17,7 @@
 ## ZenCode
 
 * [数据类型](zencode/primitive-type.md)
+* [运算符](zencode/operator.md)
 * [if](zencode/if.md)
 * [switch](zencode/switch.md)
 * [循环](zencode/loop.md)
