@@ -6,7 +6,7 @@ switch-case 是一种特殊的条件语句，用于给程序设置分支。
 
 ```javascript
 switch(expression) { // 依次匹配 expression 的结果和哪一个 case 相同，并执行该 case 下的语句
-    case a: // a 必须是字面值，不能是变量
+    case a: // a 必须是字面值，不能是变量，且只允许 byte int short char 和 string
         // do something
         break; // 用于退出 switch 程序块
     case b:
@@ -33,6 +33,28 @@ switch(expression) { // 依次匹配 expression 的结果和哪一个 case 相�
         break;
     default:
         // do something
+}
+```
+
+```javascript
+var grade as string = "B";
+
+switch(grade) {
+    case "A": 
+        println("excellent");
+        break;
+    case "B":
+    case "C": 
+        println("good");
+        break;
+    case "D":
+        println("pass");
+        break;
+    case "E":
+        println("fail");
+        break;
+    default:
+        println("unknown grade");
 }
 ```
 

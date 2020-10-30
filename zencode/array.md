@@ -36,6 +36,15 @@ var array as int[] = [2,4,6,8];
 print(array.length); // array 的元素个数为 4，输出 4
 ```
 
+* 使用 `in` 操作符检查一个对象是否在数组里
+
+```javascript
+var array as int[] = [2,4,6,8];
+
+1 in array; // false
+2 in array; // true
+```
+
 ## 多维数组
 
 你用过`craftingTable.addShaped()`吗？它的参数里面就有一个多维数组。准确的来说，是一个二维数组。
