@@ -28,6 +28,6 @@
 
 ## 高级运用
 
-* [IData](advance/idata.md)
-* [配方函数](advance/recipe-function.md)
+* [IData](gao-ji-yun-yong/idata.md)
+* [配方函数](gao-ji-yun-yong/recipe-function.md)
 

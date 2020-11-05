@@ -29,7 +29,7 @@ public function 函数名(参数表) as 返回类型名 {
 public function tweakRecipeShapeless(out as IItemStack, shapeless as IIngredient[]) as void {
     craftingTable.removeRecipe(out);
     craftingTable.addShapeless(out.registryName, out, shapeless); 
-	// registryName 为 IItemStack 的一个 Getter，返回物品的注册名，用于指定配方名
+    // registryName 为 IItemStack 的一个 Getter，返回物品的注册名，用于指定配方名
 }
 ```
 
