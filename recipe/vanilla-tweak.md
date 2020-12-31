@@ -47,7 +47,7 @@ craftingTable.addShapeless("recipe_name", <item:minecraft:sand>, [<item:minecraf
 | `craftingTable.removeRecipe(output);` | 删除特定物品的合成 |
 | `craftingTable.removeByName(name);` | 删除特定名称的配方 |
 | `craftingTable.removeByModid(modid);` | 删除特定模组的全部配方 |
-| `craftingTable.removeByRegex(modid);` | 删除名称匹配正则表达式的所有配方 |
+| `craftingTable.removeByRegex(regex);` | 删除名称匹配正则表达式的所有配方 |
 | `craftingTable.removeAll();` | 删除全部配方 |
 
 ## 熔炉
@@ -74,7 +74,7 @@ furnace.addRecipe("wool2diamond", <item:diamond>, <tag:minecraft:wool>, 1.0, 0);
 | `furance.removeRecipe(output);` | 删除特定物品的配方 |
 | `furance.removeByName(name);` | 删除特定名称的配方 |
 | `furance.removeByModid(modid);` | 删除特定模组的全部配方 |
-| `furance.removeByRegex(modid);` | 删除名称匹配正则表达式的所有配方 |
+| `furance.removeByRegex(regex);` | 删除名称匹配正则表达式的所有配方 |
 | `furance.removeAll();` | 删除全部配方 |
 
 ### 熔炉变种
