@@ -14,7 +14,7 @@
 * [原版配方修改](recipe/vanilla-tweak.md)
 * [模组配方修改](recipe/mod-tweak.md)
 
-## ZenCode
+## ZenCode <a id="zencode"></a>
 
 * [数据类型](zencode/primitive-type.md)
 * [运算符](zencode/operator.md)
@@ -26,8 +26,8 @@
 * [函数](zencode/function.md)
 * [lambda 表达式](zencode/lambda.md)
 
-## 高级运用
+## 高级运用 <a id="advance"></a>
 
-* [IData](gao-ji-yun-yong/idata.md)
-* [配方函数](gao-ji-yun-yong/recipe-function.md)
+* [IData](advance/idata.md)
+* [配方函数](advance/recipe-function.md)
 
