@@ -14,4 +14,3 @@ CraftTweaker 提供了以下指令：
 | `/ct dumpBrackets` | 导出游戏内部分种类的所有对象的 ID 至 ct\_dumps 文件夹中 |
 | `/ct syntax` | 检查脚本是否有语法错误（不过有了热重载后，不会有人再用了吧） |
 | `/reload` | 热重载脚本（不是 `/ct reload` ！） |
-

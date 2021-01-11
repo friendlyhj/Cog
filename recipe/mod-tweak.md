@@ -85,3 +85,32 @@ runicAltar.removeByName("botania:spring"); // 当然用变量也可以了
 
 综上所述，对模组配方的兼容是通过数据包实现的。而众所周知，数据包配方不支持 NBT。所以就有一大遗憾，模组的配方添加将不再兼容 NBT，对于 NBT 有额外支持的 Recipe Type 例外。
 
+<!-- ## NBT 支持
+
+forge 对数据包进行了拓展，使其支持 NBT。
+
+```javascript
+<recipetype:botania:runic_altar>.addJSONRecipe("test_xxx", {
+    "output": {
+        "type": "forge:nbt",
+        "item": "minecraft:gold_ingot",
+        "count": 2,
+        "nbt": {
+            "display": {"Lore": ["shiny"]}
+        }
+    },
+    "mana": 12000,
+    "ingredients": [
+        {
+            "type": "forge:nbt",
+            "item": "minecraft:ender_pearl",
+            "nbt": {
+                "display": {"Lore": ["a wonderful pearl"]}
+            }
+        },
+        {
+            "item": "minecraft:iron_ingot"
+        }
+    ]
+});
+``` -->
