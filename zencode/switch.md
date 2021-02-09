@@ -20,7 +20,26 @@ switch(expression) { // 依次匹配 expression 的结果和哪一个 case 相�
 
 ## Multi-case
 
-expression 会依次匹配，所以大部分分支最后面都需要 `break` 来退出 switch-case 程序块，否则会继续往下匹配做无用功。但你也可以稍稍改一下下...
+当程序匹配到 case 后，会执行 switch 块内该 case 下（和其余 case）的所有内容。所以大部分分支最后面都需要 `break` 来退出 switch-case 程序块。比如如下的程序：
+
+```javascript
+switch(character) {
+    case "A": 
+        println("a");
+    case "B":
+        println("b");
+    case "D":
+        println("d");
+    case "E":
+        println("e");
+    default:
+        println("default");
+}
+```
+
+如果 `character` 是 B 的话，则会依次打印 b d e 和 default。这往往是我们不想看见的，所以记得每个分支最后加上 `break`！
+
+但你也可以稍稍改一下下...
 
 ```javascript
 switch(expression) { // 依次匹配 expression 的结果和哪一个 case 相同，并执行该 case 下的语句
@@ -57,4 +76,3 @@ switch(grade) {
         println("unknown grade");
 }
 ```
-
