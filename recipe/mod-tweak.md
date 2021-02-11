@@ -81,36 +81,25 @@ val runicAltar = <recipetype:botania:runic_altar>;
 runicAltar.removeByName("botania:spring"); // 当然用变量也可以了
 ```
 
-## 不兼容 NBT
+## 复用 CrT 类
 
-综上所述，对模组配方的兼容是通过数据包实现的。而众所周知，数据包配方不支持 NBT。所以就有一大遗憾，模组的配方添加将不再兼容 NBT，对于 NBT 有额外支持的 Recipe Type 例外。
-
-<!-- ## NBT 支持
-
-forge 对数据包进行了拓展，使其支持 NBT。
+CraftTweaker 的 IIngredient 与 MCTag\<MCItemDefinition\>（即物品标签）支持自动转换为 IData。这意味的在加 `addJSONRecipe` 中，我们可以复用这些类，运行时这些对象会转换为 IData，达到构建出我们需要的 JSON 配方信息的目的。
 
 ```javascript
-<recipetype:botania:runic_altar>.addJSONRecipe("test_xxx", {
-    "output": {
-        "type": "forge:nbt",
-        "item": "minecraft:gold_ingot",
-        "count": 2,
-        "nbt": {
-            "display": {"Lore": ["shiny"]}
-        }
-    },
+<recipetype:botania:runic_altar>.addJSONRecipe("test", {
+    "output": <item:minecraft:gold_ingot>,
     "mana": 12000,
     "ingredients": [
-        {
-            "type": "forge:nbt",
-            "item": "minecraft:ender_pearl",
-            "nbt": {
-                "display": {"Lore": ["a wonderful pearl"]}
-            }
-        },
-        {
-            "item": "minecraft:iron_ingot"
-        }
+        <item:minecraft:iron_ingot>,
+        <tag:items:minecraft:wool>
     ]
 });
+```
+
+<!-- ## Forge 对数据包的拓展
+
+Forge 添加了 NBTIngredient 与 CompoundIngredient，这允许我们可以通过数据包来添加带有 NBT 的物品作为输入与输出以及做到 1.12 CrT IngredientOr 的效果
+
+```javascript
+
 ``` -->
