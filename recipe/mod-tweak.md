@@ -83,7 +83,7 @@ runicAltar.removeByName("botania:spring"); // 当然用变量也可以了
 
 ## 复用 CrT 类
 
-CraftTweaker 的 IIngredient 与 MCTag\<MCItemDefinition\>（即物品标签）支持自动转换为 IData。这意味的在加 `addJSONRecipe` 中，我们可以复用这些类，运行时这些对象会转换为 IData，达到构建出我们需要的 JSON 配方信息的目的。
+CraftTweaker 的 `IIngredient` 与 `MCTag<MCItemDefinition>`（即物品标签）支持自动转换为 IData。这意味的在加 `addJSONRecipe` 中，我们可以复用这些类，运行时这些对象会转换为 IData，达到构建出我们需要的 JSON 配方信息的目的。
 
 ```javascript
 <recipetype:botania:runic_altar>.addJSONRecipe("test", {
