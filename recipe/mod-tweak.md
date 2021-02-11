@@ -96,10 +96,24 @@ CraftTweaker 的 IIngredient 与 MCTag\<MCItemDefinition\>（即物品标签）�
 });
 ```
 
-<!-- ## Forge 对数据包的拓展
+## Forge 对数据包的拓展
 
-Forge 添加了 NBTIngredient 与 CompoundIngredient，这允许我们可以通过数据包来添加带有 NBT 的物品作为输入与输出以及做到 1.12 CrT IngredientOr 的效果
+Forge 添加了 NBTIngredient 与 CompoundIngredient，这允许我们可以通过数据包来添加带有 NBT 的物品作为输入与输出以及做到 1.12 CrT IngredientOr 的效果。CrT 对应类同样支持这个。
 
 ```javascript
+val a = <item:minecraft:iron_ingot>.withTag({display: {Lore: ["123" as string]}});
+val b = <item:minecraft:apple>;
 
-``` -->
+<recipetype:botania:runic_altar>.addJSONRecipe("test", {
+  "output": <item:minecraft:gold_ingot>,
+    "mana": 12000,
+    "ingredients": [
+        (a | b),
+        <tag:items:minecraft:wool>
+    ]
+});
+```
+
+## 模组的主动支持
+
+有些模组比较友好，主动提供了 CrT 支持。这种模组的 Recipe Type 有 addRecipe 之类的方法。这种你便可以像和工作台一样，和 1.12 一样用一行填空题解决问题了。这个不同模组机器格式不同，自行看 CrT wiki 或模组文档了。
