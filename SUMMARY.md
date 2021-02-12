@@ -22,7 +22,7 @@
 * [switch](zencode/switch.md)
 * [循环](zencode/loop.md)
 * [数组](zencode/array.md)
-* [List](zencode/List.md)
+* [List](zencode/list.md)
 * [映射](zencode/map.md)
 * [函数](zencode/function.md)
 * [lambda 表达式](zencode/lambda.md)
