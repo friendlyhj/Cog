@@ -154,4 +154,4 @@ craftingTable.addShaped("recipe_test_3", <item:minecraft:gold_ingot> * 2, [
 ]);
 ```
 
-这样第七个和第九个格式可以使用任意羊毛和木板。
+这样第七个和第九个格子可以使用任意羊毛和木板。
