@@ -26,7 +26,7 @@ craftingTable.addShaped("recipe_test_2", <item:minecraft:gold_ingot>, [
     [<item:minecraft:iron_ingot>, <item:minecraft:iron_ingot>, <item:minecraft:iron_ingot>],
     [<item:minecraft:iron_ingot>, <item:minecraft:air>, <item:minecraft:iron_ingot>],
     [<tag:items:minecraft:wool>, <item:minecraft:air>, <tag:items:minecraft:wool>]
-])
+]);
 ```
 
 ### 无序合成
@@ -62,7 +62,7 @@ craftingTable.addShapeless("recipe_name", <item:minecraft:sand>, [<item:minecraf
 ```javascript
 furnace.addRecipe(name, output, input, xp, cookTime);
 
-furnace.addRecipe("wool2diamond", <item:diamond>, <tag:minecraft:wool>, 1.0, 0);
+furnace.addRecipe("wool2diamond", <item:diamond>, <tag:items:minecraft:wool>, 1.0, 0);
 ```
 
 * name: 字符串，配方名
@@ -141,3 +141,17 @@ val a = <item:minecraft:iron_ingot>.withTag({display: {Lore: ["233"]}});
 
 craftingTable.addShapeless("ttt", <item:minecraft:sand>, [a, a, a]);
 ```
+
+## IngredientList
+
+你可以将两个材料用 `|` 连接起来，这样这个位置就可以使用两个材料的任意一个。
+
+```javascript
+craftingTable.addShaped("recipe_test_3", <item:minecraft:gold_ingot> * 2, [
+    [<item:minecraft:iron_ingot>, <item:minecraft:iron_ingot>, <item:minecraft:iron_ingot>],
+    [<item:minecraft:iron_ingot>, <item:minecraft:air>, <item:minecraft:iron_ingot>],
+    [<tag:items:minecraft:wool> | <tag:items:minecraft:planks>, <item:minecraft:air>, <tag:items:minecraft:wool> | <tag:items:minecraft:planks>]
+]);
+```
+
+这样第七个和第九个格式可以使用任意羊毛和木板。
