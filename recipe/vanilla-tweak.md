@@ -20,8 +20,13 @@ IIngredient ，材料接口，可以简单理解为既能是物品，也能是�
 
 ```javascript
 craftingTable.addShaped("recipe_test", <item:minecraft:dirt>, [
-                        [<item:minecraft:diamond>], [<tag:minecraft:wool>]
+                        [<item:minecraft:diamond>], [<tag:items:minecraft:wool>]
 ]);
+craftingTable.addShaped("recipe_test_2", <item:minecraft:gold_ingot>, [
+    [<item:minecraft:iron_ingot>, <item:minecraft:iron_ingot>, <item:minecraft:iron_ingot>],
+    [<item:minecraft:iron_ingot>, <item:minecraft:air>, <item:minecraft:iron_ingot>],
+    [<tag:items:minecraft:wool>, <item:minecraft:air>, <tag:items:minecraft:wool>]
+])
 ```
 
 ### 无序合成
@@ -31,7 +36,7 @@ craftingTable.addShaped("recipe_test", <item:minecraft:dirt>, [
 * inputBox 是材料的数组，只有一层中括号
 
 ```javascript
-craftingTable.addShapeless("recipe_name", <item:minecraft:sand>, [<item:minecraft:diamond>, <tag:minecraft:planks>]
+craftingTable.addShapeless("recipe_name", <item:minecraft:sand>, [<item:minecraft:diamond>, <tag:items:minecraft:planks>]
 ```
 
 ### 镜像合成
@@ -96,7 +101,7 @@ furnace.addRecipe("wool2diamond", <item:diamond>, <tag:minecraft:wool>, 1.0, 0);
 ```javascript
 campfire.addRecipe(name, output, input, xp, cookTime);
 
-campfire.addRecipe("wool2diamond", <item:diamond>, <tag:minecraft:wool>, 1.0, 0);
+campfire.addRecipe("wool2diamond", <item:diamond>, <tag:items:minecraft:wool>, 1.0, 0);
 ```
 
 * name: 字符串，配方名
@@ -116,7 +121,7 @@ campfire.addRecipe("wool2diamond", <item:diamond>, <tag:minecraft:wool>, 1.0, 0)
 ```javascript
 stoneCutter.addRecipe(recipeName, output, input);
 
-stoneCutter.addRecipe("recipe_name", <item:minecraft:grass>, <tag:minecraft:wool>);
+stoneCutter.addRecipe("recipe_name", <item:minecraft:grass>, <tag:items:minecraft:wool>);
 ```
 
 * name: 字符串，配方名
@@ -136,4 +141,3 @@ val a = <item:minecraft:iron_ingot>.withTag({display: {Lore: ["233"]}});
 
 craftingTable.addShapeless("ttt", <item:minecraft:sand>, [a, a, a]);
 ```
-
