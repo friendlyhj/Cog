@@ -26,6 +26,11 @@
 * [映射](zencode/map.md)
 * [函数](zencode/function.md)
 * [lambda 表达式](zencode/lambda.md)
+* [OOP](zencode/oop/README.md)
+    * [自定义类](zencode/oop/class.md)
+    * [拓展类](zencode/oop/expansion.md)
+    * [操作符重载](zencode/oop/operator-overload.md)
+    * [泛型](type-parameter.md)
 
 ## 高级运用 <a id="advance"></a>
 

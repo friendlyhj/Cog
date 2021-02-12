@@ -31,6 +31,8 @@ val items as List<IItemStack> = [<item:minecraft:iron_ingot>];
 
 除了数组的东西以外，List 类具有以下方法。
 
+注意：只有使用 new 关键词创建的 List 能够删减元素。
+
 以下参数类型若为 T，则代表该 List 的参数类型。
 
 | 名称 | 参数表 | 返回值 | 作用 | 例子 |
