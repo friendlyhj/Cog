@@ -11,6 +11,7 @@
 | 类名 | 解释 | 示例 |
 | :--- | :--- | :--- |
 | 整型\(int\) | 任意整数\(范围为-2147483648~2147483647\) | `var test as int = 10;` |
+| 无符号整型\(usize\) | 和 int 一样 (?) | `var test as usize = 14;` |
 | 布尔值\(bool\) | 真\(`true`\)或假\(`false`\) | `var test as bool = true;` |
 | 长整型\(long\) | 范围更大的整数\(一般int就够了\) | `var test as long = 2147483648;` |
 | 单精度浮点数\(float\) | 小数 | `var test as float = 1.5;` |
