@@ -6,7 +6,7 @@ Recipe Type 也是 1.13 Mojang 引入的概念，是配方的种类，用于数�
 
 ## 导出
 
-你可以用指令 `/ct dump recipeTypes` 或者 `/ct dumpdumpBrackets` 导出游戏内所有物品 ID。前者生成在 crafttweaker.log 里，后者在 ct\_dumps/recipetype.txt
+你可以用指令 `/ct dump recipeTypes` 或者 `/ct dumpBrackets` 导出游戏内所有物品 ID。前者生成在 crafttweaker.log 里，后者在 ct\_dumps/recipetype.txt
 
 ## 添加配方
 

@@ -75,16 +75,16 @@ furnace.addRecipe("wool2diamond", <item:diamond>, <tag:items:minecraft:wool>, 1.
 
 | 基本格式 | 作用 |
 | :--- | :--- |
-| `furance.removeRecipe(output, input);` | 删除一个特定配方（input 为 材料） |
-| `furance.removeRecipe(output);` | 删除特定物品的配方 |
-| `furance.removeByName(name);` | 删除特定名称的配方 |
-| `furance.removeByModid(modid);` | 删除特定模组的全部配方 |
-| `furance.removeByRegex(regex);` | 删除名称匹配正则表达式的所有配方 |
-| `furance.removeAll();` | 删除全部配方 |
+| `furnace.removeRecipe(output, input);` | 删除一个特定配方（input 为 材料） |
+| `furnace.removeRecipe(output);` | 删除特定物品的配方 |
+| `furnace.removeByName(name);` | 删除特定名称的配方 |
+| `furnace.removeByModid(modid);` | 删除特定模组的全部配方 |
+| `furnace.removeByRegex(regex);` | 删除名称匹配正则表达式的所有配方 |
+| `furnace.removeAll();` | 删除全部配方 |
 
 ### 熔炉变种
 
-烟熏炉把 `furance` 换成 `smoker`，高炉换成 `blastFurnace` 即可。
+烟熏炉把 `furnace` 换成 `smoker`，高炉换成 `blastFurnace` 即可。
 
 ### 熔炉燃料
 
