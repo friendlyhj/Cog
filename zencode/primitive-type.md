@@ -19,6 +19,8 @@
 | 字符\(char\) | 一个字符 | `var test as char = 'a';` |
 | 无类型\(void\) | 空，null，用于函数/方法表明该函数/方法无返回值 | 不可声明 `void 变量` |
 
+Note：ZenCode 的 `as` 关键词可以用 `:` 替代。但为了沿袭 ZenScript，本教程依旧使用 `as`。
+
 ## 字符串
 
 字符串在 Java 中并非数据类型，但在 zs 中也尤为重要。 声明字符串也很简单： `val test as string = "test";`

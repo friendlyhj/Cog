@@ -23,7 +23,7 @@ public function 函数名(参数表) as 返回类型名 {
 
 ## 例子
 
-一、将删合成与加合成打包起来
+### 将删合成与加合成打包起来
 
 ```javascript
 public function tweakRecipeShapeless(out as IItemStack, shapeless as IIngredient[]) as void {
@@ -33,7 +33,7 @@ public function tweakRecipeShapeless(out as IItemStack, shapeless as IIngredient
 }
 ```
 
-二、另一个加法
+### 另一个加法
 
 ```javascript
 public function add(x as int, y as int) as int {
@@ -41,7 +41,7 @@ public function add(x as int, y as int) as int {
 }
 ```
 
-三、默认参数
+### 默认参数
 
 ```javascript
 public function mutliply(x as int, y as int = 1) as int {
