@@ -17,4 +17,3 @@
 ## 不可省略的 item 尖括号调用
 
 在 1.12 中，你可以用 `<minecraft:iron_ingot>` 这样表示一个物品。实际上你省略了最前面的 `item:`。而现在这个不可以省略了。你必须打成 `<item:minecraft:iron_ingot>`
-

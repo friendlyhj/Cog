@@ -2,7 +2,9 @@
 
 ## IIngredient
 
-IIngredient ，材料接口，可以简单理解为既能是物品，也能是标签。如果你看见了 IIngredient，则意味着这里既能填物品，也能填标签。
+IIngredient，材料，是 Mojang 的标准化的在配方中用于匹配物品的东西。
+
+标签虽是高版本矿物系统的替代品，但由于标签的作用更大一点，除了用于类似矿辞功能的物品标签，还有方块标签等等。只有物品标签才能够转换到 IIngredient 中。一般情况下，物品标签可以自动转换到 IIngredient 中。但如有意外情况，可以手动用 `asIIngredient` 方法进行转换。
 
 如果你需要声明数组，你需要 `import` ： `import crafttweaker.api.item.IIngredient`
 
@@ -146,11 +148,15 @@ craftingTable.addShapeless("ttt", <item:minecraft:sand>, [a, a, a]);
 
 你可以将两个材料用 `|` 连接起来，这样这个位置就可以使用两个材料的任意一个。
 
+在这里我们用了 `asIIngredient` 将标签转换为了材料。
+
 ```javascript
+var woolAndPlank = <tag:items:minecraft:wool>.asIIngredient() | <tag:items:minecraft:planks>.asIIngredient();
+
 craftingTable.addShaped("recipe_test_3", <item:minecraft:gold_ingot> * 2, [
     [<item:minecraft:iron_ingot>, <item:minecraft:iron_ingot>, <item:minecraft:iron_ingot>],
     [<item:minecraft:iron_ingot>, <item:minecraft:air>, <item:minecraft:iron_ingot>],
-    [<tag:items:minecraft:wool> | <tag:items:minecraft:planks>, <item:minecraft:air>, <tag:items:minecraft:wool> | <tag:items:minecraft:planks>]
+    [woolAndPlank, <item:minecraft:air>, woolAndPlank]
 ]);
 ```
 
