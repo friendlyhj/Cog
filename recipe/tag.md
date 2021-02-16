@@ -6,7 +6,7 @@
 
 ## 导出
 
-你可以用指令 `/ct dump tags` 导出游戏内所有 Tag ID。前者生成在 crafttweaker.log。这里有个问题，日志里打印的只是 ID，而非 zs 使用的尖括号调用。
+你可以用指令 `/ct dump tags` 导出游戏内所有 Tag ID。
 
 <!-- ## Import
 
@@ -50,5 +50,4 @@ craftingTable.addShapeless("new_tag_test", <item:minecraft:diamond>, [<tag:items
 
 <tag:blocks:minecraft:wither_immune>.add(<blockstate:minecraft:stone>); 
 // 石头将抵御凋灵爆炸
-// 方块状态尖括号调用不能直接指令导出
 ```

@@ -6,7 +6,7 @@ CraftTweaker 提供了以下指令：
 
 | 指令 | 作用 |
 | :--- | :--- |
-| `/ct hand` | 打印你手中的物品的 ID 和拥有的 Tag，以 zs 的尖括号引用方式，同时将物品ID导入剪贴板 |
+| `/ct hand` | 打印你手中的物品的 ID 和拥有的 Tag，以 zs 的尖括号引用方式，同时将物品 ID 导入剪贴板 |
 | `/ct log` | 打开 CraftTweaker 的日志文件 |
 | `/ct scripts` | 打开 scripts 文件夹 |
 | `/ct inventory` | 打开物品栏内的所有物品的 ID 至日志 |
