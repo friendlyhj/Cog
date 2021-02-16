@@ -27,7 +27,7 @@
 ```java
 public expand V[K] {
     public getOptional(key as K) as V? {
-        if (this has key) {
+        if (this in key) {
             return this[key];
         } else {
             return null;
