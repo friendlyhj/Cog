@@ -62,12 +62,12 @@ println(va + vb); // 我们重载了加号运算符，现在可以用加号进�
 IndexGet 和 IndexSet 运算符比较特殊，需采用 `[]` 和 `[]=`。以下是 stdlib 的 List 部分代码。
 
 ```java
-    // [Native] 表示调用内部 Java 方法，请忽略
-    [Native("getAtIndex")]
-    public [](index as usize) as T;
+// [Native] 表示调用内部 Java 方法，请忽略
+[Native("getAtIndex")]
+public [](index as usize) as T;
 
-    [Native("setAtIndex")]
-    public []=(index as usize, value as T) as T;
+[Native("setAtIndex")]
+public []=(index as usize, value as T) as T;
 ```
 
 这样，对于一个 `List<T>` ，我们就可以用 `list[1]` `list[1] = bar` 的形式了。

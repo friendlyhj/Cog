@@ -114,6 +114,40 @@ val b = <item:minecraft:apple>;
 });
 ```
 
+## 额外设置 Recipe Serializer
+
+Recipe Serializer 用于将一个 JSON 转换成游戏里可用的配方。原版按照 JSON 的 type 字段来决定使用哪一个 Recipe Serializer。CrT 加 JSON 配方，会默认使用与 Recipe Type ID 相同的 Recipe Serializer。一般这样不会出现问题，所以我们也一般会省略 type 字段。但是有些模组的 Recipe Type 与 Recipe Serializer 的 ID 不同。这个时候我们依旧需要指定 Recipe Serializer Type。如星辉魔法的各个祭坛的配方添加。
+
+> 摘自 <https://github.com/HellFirePvP/AstralSorcery/issues/1715#issuecomment-778901867>
+
+```javascript
+<recipetype:astralsorcery:simple_altar>.addJSONRecipe("stone2marbletest", {
+    "type": "astralsorcery:altar",
+    "altar_type": 0,
+    "duration": 5,
+    "starlight": 1,
+    "pattern": [
+        "_____",
+        "_____",
+        "__A__",
+        "_____",
+        "_____"
+    ],
+    "key": {
+        "A": {
+            "tag": "forge:stone"
+        }
+    },
+    "output": [{
+        "item": "astralsorcery:marble_raw",
+        "count": 1
+    }],
+    "effects": [
+        "astralsorcery:built_in_effect_discovery_central_beam"
+    ]
+});
+```
+
 ## 模组的主动支持
 
 有些模组比较友好，主动提供了 CrT 支持。这种模组的 Recipe Type 有 addRecipe 之类的方法。这种你便可以像和工作台一样，和 1.12 一样用一行填空题解决问题了。这个不同模组机器格式不同，自行看 CrT wiki 或模组文档了。
