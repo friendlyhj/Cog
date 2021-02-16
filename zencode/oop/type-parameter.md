@@ -22,16 +22,12 @@
 
 ### 泛型方法
 
-泛型方法目前只能声明在已经有泛型的类里的，并使用这个类的泛型。
+泛型方法目前只能声明在已经有泛型的类里的，并使用这个类的泛型。特殊的，但我们想要拓展数组和映射时，需要先声明泛型。
 
 ```java
-public expand V[K] {
+public expand <K, V> V[K] {
     public getOptional(key as K) as V? {
-        if (this in key) {
-            return this[key];
-        } else {
-            return null;
-        }
+        return key in this ? this[key] : null;
     }
 }
 ```
