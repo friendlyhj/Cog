@@ -26,7 +26,9 @@ public class Animal {
         return this.age * 2;
     }
 
-    // TODO: 将 get 换成 set 即为 setter，不过目前有 bug 不可用
+    public set bigAge as int { // setter
+        this.age = $ / 2; // 参数 $ 为要 set 的参数
+    }
 
     public showAge() as void { 
         println("The animal's age is " + age);
