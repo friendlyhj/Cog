@@ -35,6 +35,9 @@
 
 ## 高级运用 <a id="advance"></a>
 
-* [IData](advance/idata.md)
+<!-- * [IData](advance/idata.md) -->
+* [Tooltip](advance/tooltip.md)
+* [物品条件](advance/item-condition.md)
+* [物品转换器](advance/item-transform.md)
 * [配方函数](advance/recipe-function.md)
-
+* [事件](advance/event.md)
