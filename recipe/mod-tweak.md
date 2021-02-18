@@ -98,7 +98,7 @@ CraftTweaker 的 `IIngredient` 与 `MCTag<MCItemDefinition>`（即物品标签�
 
 ## 材料数量
 
-Mojang 反序列化 IIngredient，也是 CrT 将 IIngredient 转换成 IData 时，会丢失数量信息。事实上，Ingredient 是没有数量信息的。CraftTweaker 提供了 IngredientWithAmount 额外补充了一个数量信息，但也是由于以上原因，CrT 在把它转换成 IData 时也不会保留数量。原版的配方输入是没有数量的。但模组没有，所以模组读取配方 JSON 信息时，会根据他们各自的方式来获取材料的数量，这是不确定的。在写完整的 JSON 配方时，按照模组数据包的例子不会出问题。但是如果你想要复用 CrT 类时，就会出问题。你可以自定义一个函数，将物品数量按照你要添加模组的读取格式重新加回去。
+Mojang 反序列化 IIngredient，也是 CrT 将 IIngredient 转换成 IData 时，会丢失数量信息。事实上，Ingredient 是没有数量信息的。CraftTweaker 提供了 IngredientWithAmount 额外补充了一个数量信息，但也是由于以上原因，CrT 在把它转换成 IData 时也不会保留数量。原版的配方输入是没有数量的。但模组有，所以模组读取配方 JSON 信息时，会根据他们各自的方式来获取材料的数量，这是不确定的。在写完整的 JSON 配方时，按照模组数据包的例子不会出问题。但是如果你想要复用 CrT 类时，就会出问题。你可以自定义一个函数，将物品数量按照你要添加模组的读取格式重新加回去。
 
 ## Forge 对数据包的拓展
 
