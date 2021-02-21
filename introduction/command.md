@@ -9,8 +9,8 @@ CraftTweaker 提供了以下指令：
 | `/ct hand` | 打印你手中的物品的 ID 和拥有的 Tag，以 zs 的尖括号引用方式，同时将物品 ID 导入剪贴板 |
 | `/ct log` | 打开 CraftTweaker 的日志文件 |
 | `/ct scripts` | 打开 scripts 文件夹 |
-| `/ct inventory` | 打开物品栏内的所有物品的 ID 至日志 |
-| `/ct dumpzs <type>` | 导出游戏内所有特定的对象的 ID 至日志（如物品、流体、buff……） |
+| `/ct inventory` | 打印物品栏内的所有物品的 ID 至日志 |
+| `/ct dump <type>` | 导出游戏内所有特定的对象的 ID 至日志（如物品、流体、buff……） |
 | `/ct dumpBrackets` | 导出游戏内部分种类的所有对象的 ID 至 ct\_dumps 文件夹中 |
 | `/ct syntax` | 检查脚本是否有语法错误（不过有了热重载后，不会有人再用了吧） |
 | `/reload` | 热重载脚本（不是 `/ct reload` ！） |
