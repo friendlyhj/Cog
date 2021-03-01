@@ -50,7 +50,7 @@ import crafttweaker.api.util.text.MCStyle;
 
 * stack as `IItemStack`：具体的物品
 * tooltip as `List<MCTextComponent>`：已经添加好的 tooltip，往其添加元素即可添加 tooltip。
-* advance as `bool`：是否为高级 tooltip。只用于特殊游戏设置和地图，基本无用。
+* advance as `bool`：是否为高级 tooltip。只用于地图和 F3 + H。
 
 ```javascript
 // item.modifyTooltip(ITooltipFunction tooltipFunction);
