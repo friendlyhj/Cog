@@ -57,6 +57,8 @@ println(va + vb); // 我们重载了加号运算符，现在可以用加号进�
 
 在上面的例子出现了 `implicit`，这个关键字可以用来指定这个类能够自动转换成另一个类的对象。上面的例子我们添加了 Vector3i 向 string 的自动转换，这也意味着我们能够直接 print 这个对象。（先把对象转换为 string，再打印这个 string）
 
+当然你也可以用 `as string` 来手动转型。
+
 ## IndexGet 与 IndexSet
 
 IndexGet 和 IndexSet 运算符比较特殊，需采用 `[]` 和 `[]=`。以下是 stdlib 的 List 部分代码。
