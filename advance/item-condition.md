@@ -14,7 +14,7 @@
 ```javascript
 // 只有含有 Display NBT 的铁锭才能参与合成
 
-<tag:items:forge:ingots/iron>.onlyIf("helloworld", (stack) => {
+<tag:items:forge:ingots/iron>.asIIngredient().onlyIf("helloworld", (stack) => {
     return stack.tag.contains("Display");
 })
 ```
