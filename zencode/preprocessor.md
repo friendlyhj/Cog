@@ -20,7 +20,7 @@
 
 | 名称 | 参数 | 参数默认值 | 作用 | 使用例子 |
 |:--- | :--- | :--- | :--- | :--- |
-| `#loader` | 脚本加载器名 | `crafttweaker` | 指定脚本加载器，默认为 `crafttweaker` | `#loader contenttweaker` |
+| `#loader` | 脚本加载器名 | `crafttweaker` | 指定脚本加载器 | `#loader contenttweaker` |
 | `#priority` | 脚本优先级 | `10` | 指定脚本优先级 | `#priority 100` |
 | `#replace` | 将被替换的字符，替换的字符 | 无 | 将脚本的部分字符替换掉 | `#replace ture true` （这样 ture 就能当 true 用了） |
 
