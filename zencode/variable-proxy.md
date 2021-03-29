@@ -35,29 +35,20 @@ public class Proxy {
 print(Proxy.getFoo());
 ```
 
-## Setter
+## 静态字段
 
-变量不可能只能 get，更需要 set，需要修改。我们可以使用代理类来保存数据。然而 ZenCode 目前不能使用静态字段，所以我们需要实例化（即使用 `new` 关键字创建一个对象）这个类。
+我们可以在代理类新建一个静态字段，这个字段可以随意修改。
 
 ```javascript
-public class ProxyTwo {
-    public this() {} // 无参数构造器
-
-    public var foo as int = 18;
+public class Proxy {
+    public static var foo as int = 233; // 再提一遍，var 代表这个变量可以重新赋值，而 val 不能。
 }
 
-var proxyTwo = new ProxyTwo();
-
-// 然而这个实例化的对象也是变量，我们还需要代理它
-
-public class ProxyTwoHandler {
-    public function get() => proxyTwo;
-}
-
-// 调用
-// 先用 ProxyTwoHandler.get() 获取它的实例
-// 再获取这个实例的字段
-print(ProxyTwoHandler.get().foo); // get
-ProxyTwoHandler.get().foo = 42; // set
-print(ProxyTwoHandler.get().foo)
+// get
+print("variable foo: " + Proxy.foo);
+// set
+Proxy.foo = 333;
+print("now, variable foo: " + Proxy.foo);
 ```
+
+请注意，变量代理均使用静态字段和函数，所以不要用 `new` 实例化这个类。
