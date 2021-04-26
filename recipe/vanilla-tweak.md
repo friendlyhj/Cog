@@ -53,6 +53,7 @@ craftingTable.addShapeless("recipe_name", <item:minecraft:sand>, [<item:minecraf
 | :--- | :--- |
 | `craftingTable.removeRecipe(output);` | 删除特定物品的合成 |
 | `craftingTable.removeByName(name);` | 删除特定名称的配方 |
+| `craftingTable.removeByInput(input);` | 删除含有特定物品的全部配方 |
 | `craftingTable.removeByModid(modid);` | 删除特定模组的全部配方 |
 | `craftingTable.removeByRegex(regex);` | 删除名称匹配正则表达式的所有配方 |
 | `craftingTable.removeAll();` | 删除全部配方 |
