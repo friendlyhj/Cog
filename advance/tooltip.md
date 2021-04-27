@@ -46,7 +46,7 @@ import crafttweaker.api.util.text.MCStyle;
 
 附魔书的 tooltip 不是固定的。说明他是动态的。在 CrT 也可以使用。
 
-这里出现的 ITooltipFunction 是本篇教程你第一个看见的 lambda 表达式了。有三个参数：
+这里出现的 ITooltipFunction (`crafttweaker.api.item.tooltip.ITooltipFunction`) 是本篇教程你第一个看见的 lambda 表达式了。有三个参数：
 
 * stack as `IItemStack`：具体的物品
 * tooltip as `List<MCTextComponent>`：已经添加好的 tooltip，往其添加元素即可添加 tooltip。
