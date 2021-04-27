@@ -44,3 +44,9 @@
 * [物品转换器](advance/item-transform.md)
 * [配方函数](advance/recipe-function.md)
 * [事件](advance/event.md)
+* [全局战利品修饰器](advance/glm/README.md)
+  * [战利品修饰器](advance/glm/loot-modifier.md)
+  * [方块掉落修改](advance/glm/block-drops.md)
+  * [实体掉落修改](advance/glm/entity-drops.md)
+  <!-- 物品战利品表 -->
+  * [战利品条件](advance/glm/loot-condition.md)
