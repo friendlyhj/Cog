@@ -1,6 +1,6 @@
-# 战利品修饰符
+# 战利品修饰器
 
-ILootModifier（战利品修饰符）(`crafttweaker.api.loot.modifiers.ILootModifier`) 是一个函数式接口，他有两个参数：
+ILootModifier（战利品修饰器）(`crafttweaker.api.loot.modifiers.ILootModifier`) 是一个函数式接口，他有两个参数：
 
 * `loot as List<IItemStack>` 已经由战利品表抽奖出的结果
 * `currentContext as LootContext` 战利品表抽奖的当前背景
@@ -88,4 +88,41 @@ val replaceCarrotWithPotato as ILootModifier = CommonLootModifiers.replaceWith(<
 
 // 例子调用了前面定义的修饰器，则为先删除全部再加个铁锭
 val clearThenAddIronIngot as ILootModifier = CommonLootModifiers.chaining([clearLoot, addIronIngot]);
+```
+
+## LootContext
+
+LootContext 包含了当前战利品表的当前背景，他有这些 Getter。注意不是有些 Getter 返回的可能是 null。这也很好理解，对于方块掉落时的战利品抽奖，你不可能获取表示实体伤害类型的 DamageSource。所以这些 Getter 返回的大多是可空类型，记得强转为非空类型！
+
+| Name | Type | Description |
+|------|------|-------------|
+| blockState | [MCBlockState](/vanilla/api/blocks/MCBlockState)? | 当前破坏的方块状态 |
+| damageSource | [DamageSource](/vanilla/api/util/DamageSource)? | 造成当前实体死亡的伤害类型 |
+| directKillerEntity | [MCEntity](/vanilla/api/entity/MCEntity)? |  杀死当前实体的直接实体，如果玩家用箭射死一个实体，这个 Getter 返回的是箭 |
+| explosionRadius | float | 造成方块破坏或实体死亡的爆炸的半径 |
+| killerEntity | [MCEntity](/vanilla/api/entity/MCEntity)? | 杀死这个实体的实体，注意会杀死实体的不只有玩家 |
+| lastDamagePlayer | [MCPlayerEntity](/vanilla/api/entity/MCPlayerEntity)? |  最后一次对该实体造成伤害的玩家 |
+| lootTableId | [MCResourceLocation](/vanilla/api/util/MCResourceLocation) | 当时的战利品表 ID |
+| lootingModifier | int | 当时的战利品表修饰符 ID |
+| luck | float | 玩家的幸运值 |
+| origin | [MCVector3d](/vanilla/api/util/MCVector3d)? |  Gets the origin, or location, of the loot roll, if present; null otherwise. |
+| thisEntity | [MCEntity](/vanilla/api/entity/MCEntity)? |  当前实体 |
+| tileEntity | [MCTileEntity](/vanilla/api/tileentity/MCTileEntity)? | 当前破坏方块内部的 TileEntity |
+| tool | [IItemStack](/vanilla/api/items/IItemStack) |  破坏方块所用的工具 |
+| world | [MCWorld](/vanilla/api/world/MCWorld)? | 当前世界 |
+
+### 例子
+
+```less
+import crafttweaker.api.util.DamageSource;
+
+val addGoldIngotWhenDiedByMagic as ILootModifier = (loot, currentContext) => {
+    if (currentContext.damageSource != null) { // 确定非空
+        val damageSource as DamageSource = currentContext.damageSource as DamageSource; // 获取当前 DamageSource，并强转为非空类型
+        if (damageSource.type == "magic") { // 如果是魔法
+            loot.add(<item:minecraft:gold_ingot>);
+        }
+    }
+    return loot; // 返回修改后的 loot list
+};
 ```
