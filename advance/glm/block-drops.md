@@ -44,7 +44,7 @@ CrT 还有更多实用方法来修改掉落物
 
 // block.addToolDrop(uniqueId as string, tool as IItemStack, stack as IItemStack)
 // block.addToolDrops(uniqueId as string, tool as IItemStack, stacks as IItemStack[])
-// blockstate..addToolDrop(uniqueId as string, tool as IItemStack, stack as IItemStack)
+// blockstate.addToolDrop(uniqueId as string, tool as IItemStack, stack as IItemStack)
 // blockstate.addToolDrops(uniqueId as string, tool as IItemStack, stacks as IItemStack[])
 // 使用什么工具后才会额外添加掉落物，工具匹配只匹配 ID，不匹配耐久、数量、NBT。
 <block:minecraft:crafting_table>.addToolDrop("one", <item:minecraft:diamond_axe>, <item:minecraft:diamond>);
