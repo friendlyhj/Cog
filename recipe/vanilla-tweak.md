@@ -65,14 +65,14 @@ craftingTable.addShapeless("recipe_name", <item:minecraft:sand>, [<item:minecraf
 ```javascript
 furnace.addRecipe(name, output, input, xp, cookTime);
 
-furnace.addRecipe("wool2diamond", <item:diamond>, <tag:items:minecraft:wool>, 1.0, 0);
+furnace.addRecipe("wool2diamond", <item:diamond>, <tag:items:minecraft:wool>, 1.0, 200);
 ```
 
 * name: 字符串，配方名
 * output: 物品，配方输出
 * input: IIngredient，配方输入
 * xp: 双精度浮点数，该配方产生的经验值
-* cookTime: 整数，配方所需时间（如果填 0 ，则取缺省值 200）
+* cookTime: 整数，配方所需时间（Tip: 原版配方均为 200）
 
 ### 移除配方
 
@@ -104,14 +104,14 @@ furnace.addRecipe("wool2diamond", <item:diamond>, <tag:items:minecraft:wool>, 1.
 ```javascript
 campfire.addRecipe(name, output, input, xp, cookTime);
 
-campfire.addRecipe("wool2diamond", <item:diamond>, <tag:items:minecraft:wool>, 1.0, 0);
+campfire.addRecipe("wool2diamond", <item:diamond>, <tag:items:minecraft:wool>, 1.0, 100);
 ```
 
 * name: 字符串，配方名
 * output: 物品，配方输出
 * input: IIngredient，配方输入
 * xp: 双精度浮点数，该配方产生的经验值
-* cookTime: 整数，配方所需时间（如果填 0 ，则取缺省值 100）
+* cookTime: 整数，配方所需时间（Tip: 原版配方均为 100）
 
 ### 移除配方
 
