@@ -2,7 +2,7 @@
 
 ILootModifier（战利品修饰器）(`crafttweaker.api.loot.modifiers.ILootModifier`) 是一个函数式接口，他有两个参数：
 
-* `loot as List<IItemStack>` 已经由战利品表抽奖出的结果
+* `loots as List<IItemStack>` 已经由战利品表抽奖出的结果
 * `currentContext as LootContext` 战利品表抽奖的当前背景
 
 这个函数需要返回一个 `List<IItemStack>` 来确定实际的战利品表抽奖结果。
@@ -11,18 +11,18 @@ ILootModifier（战利品修饰器）(`crafttweaker.api.loot.modifiers.ILootModi
 
 ```less
 // 这个修饰符由于直接返回了 loot list，而并没有修改，所以实际上没啥用
-(loot, currentContext) => loot
+(loots, currentContext) => loots
 
-(loot, currentContext) => {
+(loots, currentContext) => {
     // 给 loot list 添加了铁锭
     // 相当于给战利品表抽奖结果额外添加了一个铁锭
-    loot.add(<item:minecraft:iron_ingot>);
-    return loot;
+    loots.add(<item:minecraft:iron_ingot>);
+    return loots;
 }
 
 // 直接忽略原来的战利品抽奖结果，使实际上的抽奖结果固定为一个铁锭
 // 数组可以自动转型为 List，这是没有问题的
-(loot, currentContext) => [<item:minecraft:iron_ingot>]
+(loots, currentContext) => [<item:minecraft:iron_ingot>]
 ```
 
 ## CommonLootModifiers
@@ -111,18 +111,21 @@ LootContext 包含了当前战利品表的当前背景，他有这些 Getter。�
 | tool | [IItemStack](/vanilla/api/items/IItemStack) |  破坏方块所用的工具 |
 | world | [MCWorld](/vanilla/api/world/MCWorld)? | 当前世界 |
 
+Tip: 往往你需要使修改结果随机，比如实体掉落 0 ~ 3 个物品，你需要一个随机数生成器 [Random](https://docs.blamejared.com/1.16/en/vanilla/api/util/Random/)，它可以从 MCWorld 中获取，即 `currentContext.world.random`。
+
 ### 例子
 
 ```less
 import crafttweaker.api.util.DamageSource;
+import crafttweaker.api.loot.modifiers.ILootModifier;
 
-val addGoldIngotWhenDiedByMagic as ILootModifier = (loot, currentContext) => {
+val addGoldIngotWhenDiedByMagic as ILootModifier = (loots, currentContext) => {
     if (currentContext.damageSource != null) { // 确定非空
         val damageSource as DamageSource = currentContext.damageSource as DamageSource; // 获取当前 DamageSource，并强转为非空类型
-        if (damageSource.type == "magic") { // 如果是魔法
-            loot.add(<item:minecraft:gold_ingot>);
+        if (damageSource.magic) { // 如果是魔法
+            loots.add(<item:minecraft:gold_ingot>);
         }
     }
-    return loot; // 返回修改后的 loot list
+    return loots; // 返回修改后的 loot list
 };
 ```

@@ -21,10 +21,10 @@ import crafttweaker.api.loot.modifiers.ILootModifier;
 
 // 钻石矿石将掉落其本身
 // 请注意两个尖括号引用，前面是钻石矿石方块，后面是钻石矿石物品
-<block:minecraft:diamond_ore>.addLootModifier("diamond_ore", (loot, currentContext) => [<item:minecraft:diamond_ore>]);
+<block:minecraft:diamond_ore>.addLootModifier("diamond_ore", (loots, currentContext) => [<item:minecraft:diamond_ore>]);
 
 // 上面有雪的草方块将掉落钻石
-<blockstate:minecraft:grass_block:snowy=true>.addTargetedLootModifier("snowy_diamond", (loot, currentContext) => [<item:minecraft:diamond>]);
+<blockstate:minecraft:grass_block:snowy=true>.addTargetedLootModifier("snowy_diamond", (loots, currentContext) => [<item:minecraft:diamond>]);
 
 // 橡木将不掉落任何东西
 <block:minecraft:oak_log>.addLootModifier("clear_oak_drop", CommonLootModifiers.clearLoot());
@@ -58,5 +58,5 @@ CrT 还有更多实用方法来修改掉落物
 // 使用什么工具后才会使用这个战利品表修饰器，第一个方法不匹配耐久、数量、NBT，你可以使用后面两个来设定匹配
 
 // 只有使用满耐久的钻石斧破坏工作台才会把掉落物改成钻石
-<block:minecraft:crafting_table>.addToolDrop("one", <item:minecraft:diamond_axe>, true, (loot, currentContext) => [<item:minecraft:diamond>]);
+<block:minecraft:crafting_table>.addToolDrop("one", <item:minecraft:diamond_axe>, true, (loots, currentContext) => [<item:minecraft:diamond>]);
 ```

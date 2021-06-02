@@ -37,7 +37,7 @@ val items as List<IItemStack> = [<item:minecraft:iron_ingot>];
 
 | 名称 | 参数表 | 返回值 | 作用 | 例子 |
 | --- | --- | --- | --- | ---- |
-| add  | T     | void | 在 List 的末尾添加一个元素 | `list.add(<item:minecraft:iron_ingot>)` |
+| add  | T | void | 在 List 的末尾添加一个元素 | `list.add(<item:minecraft:iron_ingot>)` |
 | insert | usize, T | void | 在指定索引位置插入一个元素 | `list.insert(2, <item:minecraft:iron_ingot>);` |
 | remove | usize | T | 删除 List 位于指定索引的元素，返回删除的元素 | `list.remove(2);` |
 | indexOf | T | usize | 返回一个元素在 List 的最先出现的索引位置，如果 List 不存在该元素，则返回 -1 | `list.indexOf(<item:minecraft:iron_ingot>)` |
