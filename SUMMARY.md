@@ -49,4 +49,4 @@
   * [方块掉落修改](advance/glm/block-drops.md)
   * [实体掉落修改](advance/glm/entity-drops.md)
   <!-- 物品战利品表 -->
-  * [战利品条件](advance/glm/loot-condition.md)
+  * [战利品修饰器管理器](advance/glm/modifier-manager.md)
