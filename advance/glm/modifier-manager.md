@@ -91,6 +91,7 @@ var lcb = LootConditionBuilder.create() // 创建一个空的
     // 添加一个 ILootConditionBuilder，为 LootTableId，
     // 用于限定作用于哪个战利品表，例子为沙漠神殿
     // 尖括号泛型为 LootTableId，则 lambda 表达式的参数为 LootTableId 对象
+    // 等等，你说战利品表 ID 从哪看？输入 `/ct dump loot_tables` 可以查看游戏内所有战利品表 ID
     // 例子调用 LootTableId 类的 withTableId 方法设定这个条件指定的战利品表
     .add<LootTableId>(condition => {
         condition.withTableId(<resource:minecraft:chests/desert_pyramid>)
@@ -152,4 +153,13 @@ loot.modifiers.register(
 
 ## 删除模组的战利品修饰器
 
-// TODO
+其他模组可能也会注册自己的战利品修饰器。比起添加，删除则相当简单，毕竟它只需要填入想要删除的 ID 即可...
+
+你可以通过 `/ct dump loot_modifiers` 指令查看游戏内所有战利品修饰器。
+
+```javascript
+loot.modifiers.removeAll(); // 删除所有
+loot.modifiers.removeByModId(modid as string); // 删除特定模组的
+loot.modifiers.removeByName(name as string); // 删除指定 ID 的
+loot.modifiers.removeByRegex(regex as string); // 删除所有 ID 匹配所给正则的
+```
