@@ -119,6 +119,7 @@ import crafttweaker.api.loot.conditions.LootConditionBuilder;
 import crafttweaker.api.loot.conditions.vanilla.TableBonus;
 import crafttweaker.api.loot.conditions.vanilla.WeatherCheck;
 import crafttweaker.api.loot.conditions.crafttweaker.Not;
+import crafttweaker.api.loot.conditions.vanilla.BlockStateProperty;
 import crafttweaker.api.loot.modifiers.CommonLootModifiers;
 
 loot.modifiers.register(
@@ -127,6 +128,11 @@ loot.modifiers.register(
         // 下雨
         .add<WeatherCheck>(condition => {
             condition.withRain();
+        })
+        // 指定只作用于原版铁矿石
+        .add<BlockStateProperty>(condition => {
+            // 这里填的是 MCBlock
+            condition.withBlock(<block:minecraft:iron_ore>);
         })
         // 对下面的条件取非
         // 我们需要跳过精准采集，即为给下面匹配精准采集的条件取非
