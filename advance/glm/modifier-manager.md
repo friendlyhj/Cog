@@ -79,7 +79,7 @@ import crafttweaker.api.loot.conditions.crafttweaker.Or;
 
 这个方法返回 LootConditionBuilder 本身，则允许你 *链性调用* 多个 `add` 方法，来添加多个 ILootConditionTypeBuilder。
 
-#### 例子
+### 例子
 
 ```javascript
 import crafttweaker.api.loot.conditions.LootConditionBuilder;
