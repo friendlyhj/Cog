@@ -79,7 +79,7 @@ import crafttweaker.api.loot.conditions.crafttweaker.Or;
 
 这个方法返回 LootConditionBuilder 本身，则允许你 *链性调用* 多个 `add` 方法，来添加多个 ILootConditionTypeBuilder。
 
-例子：
+#### 例子
 
 ```javascript
 import crafttweaker.api.loot.conditions.LootConditionBuilder;
@@ -106,12 +106,6 @@ var lcb = LootConditionBuilder.create() // 创建一个空的
 // 注册战利品修饰符，这个修饰符只有战利品表是沙漠神殿和 70% 几率生效，效果是添加一本书。
 loot.modifiers.register("add_book", lcb, CommonLootModifiers.add(<item:minecraft:book>);)
 ```
-
-是的，就像上文例子那样，你基本不需要自己重新用 lambda 写一个 ILootCondition 或 ILootModifier。通过组合内置战利品条件和战利品修饰符，你就能满足 90% 的需求。
-
-在官方文档的 `Vanilla/Api/Loot/Conditions/Vanilla` 和 `Vanilla/Api/Loot/Conditions/CraftTweaker` 章节你可以看见所有提供的 ILootCondition。
-
----
 
 铁矿在下雨的时候将直接会掉落铁锭，并排除精准采集的情况。
 
@@ -150,6 +144,10 @@ loot.modifiers.register(
     CommonLootModifiers.replaceWith(<tag:items:ores/iron>, <item:minecraft:iron_ingot>); 
 );
 ```
+
+是的，就像上文例子那样，你基本不需要自己重新用 lambda 写一个 ILootCondition 或 ILootModifier。通过组合内置战利品条件和战利品修饰符，你就能满足 90% 的需求。
+
+在官方文档的 `Vanilla/Api/Loot/Conditions/Vanilla` 和 `Vanilla/Api/Loot/Conditions/CraftTweaker` 章节你可以看见所有提供的 ILootConditionTypeBuilder。
 
 ## 删除模组的战利品修饰器
 
