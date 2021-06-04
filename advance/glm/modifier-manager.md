@@ -75,7 +75,7 @@ import crafttweaker.api.loot.conditions.crafttweaker.Or;
 // builder.add<T extends ILootConditionTypeBuilder>(lender as Consumer<T>) as LootConditionBuilder
 ```
 
-尖括号内填所需的 ILootConditionalTypeBuilder 的类名，而括号内的 lender 则为以说给泛型的实例为参数，无返回值的 lambda 表达式，用于设定一些数值。
+尖括号内填所需的 ILootConditionalTypeBuilder 的类名，而括号内的 lender 则为以所给泛型的实例为参数，无返回值的 lambda 表达式，用于设定一些数值。
 
 这个方法返回 LootConditionBuilder 本身，则允许你 *链性调用* 多个 `add` 方法，来添加多个 ILootConditionTypeBuilder。
 
@@ -112,7 +112,7 @@ loot.modifiers.register("add_book", lcb, CommonLootModifiers.add(<item:minecraft
 
 ---
 
-铁矿在下雨的时候直接将会掉落铁锭，并排除精准采集的情况。
+铁矿在下雨的时候将直接会掉落铁锭，并排除精准采集的情况。
 
 ```javascript
 import crafttweaker.api.loot.conditions.LootConditionBuilder;
