@@ -58,5 +58,5 @@ CrT 还有更多实用方法来修改掉落物
 // 使用什么工具后才会使用这个战利品表修饰器，第一个方法不匹配耐久、数量、NBT，你可以使用后面两个来设定匹配
 
 // 只有使用满耐久的钻石斧破坏工作台才会把掉落物改成钻石
-<block:minecraft:crafting_table>.addToolDrop("one", <item:minecraft:diamond_axe>, true, (loots, currentContext) => [<item:minecraft:diamond>]);
+<block:minecraft:crafting_table>.addToolLootModifier("one", <item:minecraft:diamond_axe>, true, (loots, currentContext) => [<item:minecraft:diamond>]);
 ```
