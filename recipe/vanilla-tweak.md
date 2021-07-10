@@ -140,7 +140,7 @@ stoneCutter.addRecipe("recipe_name", <item:minecraft:grass>, <tag:items:minecraf
 与 1.12 相同，你依旧可以用 `withTag` 来标记物品的 NBT，并将其作为配方的输入输出。
 
 ```javascript
-val a = <item:minecraft:iron_ingot>.withTag({display: {Lore: ["233"]}});
+val a = <item:minecraft:iron_ingot>.withTag({Display: {Lore: ["233"]}});
 
 craftingTable.addShapeless("ttt", <item:minecraft:sand>, [a, a, a]);
 ```
