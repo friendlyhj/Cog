@@ -78,7 +78,7 @@ Recipe Type 也是 1.13 Mojang 引入的概念，是配方的种类，用于数�
 <recipetype:botania:runic_altar>.removeAll(); // 删除所有符文祭坛配方
 
 val runicAltar = <recipetype:botania:runic_altar>;
-runicAltar.removeByName("botania:spring"); // 当然用变量也可以了
+runicAltar.removeByName("botania:runic_altar/spring"); // 当然用变量也可以了
 ```
 
 ## 复用 CrT 类
