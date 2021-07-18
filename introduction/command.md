@@ -13,4 +13,5 @@ CraftTweaker 提供了以下指令：
 | `/ct dump <type>` | 导出游戏内所有特定的对象的 ID 至日志（如物品、流体、buff……） |
 | `/ct dumpBrackets` | 导出游戏内部分种类的所有对象的 ID 至 ct\_dumps 文件夹中 |
 | `/ct syntax` | 检查脚本是否有语法错误（不过有了热重载后，不会有人再用了吧） |
+| `/ct examples` | 将会生成示例脚本 |
 | `/reload` | 热重载脚本（不是 `/ct reload` ！） |
