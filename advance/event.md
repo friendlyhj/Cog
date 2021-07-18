@@ -51,3 +51,7 @@ CTEventManager.register<MCItemTossEvent>(event => {
     player.sendMessage(MCTextComponent.createStringTextComponent("You tossed " + item.commandString + " !"));
 });
 ```
+
+## 取消事件
+
+使用事件的 `cancel` 方法即可取消事件：`event.cancel();`。取消事件的逻辑由事件本身指定，具体请参阅官方文档。
