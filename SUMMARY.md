@@ -50,3 +50,11 @@
   * [实体掉落修改](advance/glm/entity-drops.md)
   <!-- 物品战利品表 -->
   * [战利品修饰器管理器](advance/glm/modifier-manager.md)
+
+## ContentTweaker <a id="contenttweaker"></a>
+
+* [资源文件](contenttweaker/resources.md)
+* [物品](contenttweaker/items.md)
+* [方块](contenttweaker/blocks.md)
+* [流体](contenttweaker/fluids.md)
+* [高级运用](contenttweaker/advanced-function.md)
