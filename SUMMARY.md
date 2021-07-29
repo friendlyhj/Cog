@@ -53,6 +53,7 @@
 
 ## ContentTweaker <a id="contenttweaker"></a>
 
+* [前言](contenttweaker/README.md)
 * [资源文件](contenttweaker/resources.md)
 * [物品](contenttweaker/items.md)
 * [方块](contenttweaker/blocks.md)
