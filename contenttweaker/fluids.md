@@ -10,7 +10,7 @@ FluidBuilder 有两个构造函数：
 
 ```kotlin
 // new FluidBuilder(isMolten as boolean, color as int)
-// new FluidBuilder(true, 0x66ccff);
+new FluidBuilder(true, 0x66ccff);
 // isMolten: 这个流体是不是类似熔融的，类似熔岩的
 // color：流体颜色，ARGB 格式，但若你没有设置 alpha 值，会将 alpha 值设置为 0xff，（即 0x66ccff 会被处理为 0xff66ccff）
 // 这样创建的流体将会使用内置材质并进行染色，一般而言，你用这个就行，也不必担心材质的问题。
@@ -19,7 +19,7 @@ FluidBuilder 有两个构造函数：
 // new FluidBuilder(isMolten as boolean, color as int, stillTexture as MCResourceLocation, flowTexture as MCResourceLocation)
 // 额外设置静止和流动材质
 // color 参数将只用于自动生成的流体桶，而不会对流体本身染色
-// new FluidBuilder(true, 0x66ccff, <resource:contenttweaker:fluid/liquid>, <resource:contenttweaker:fluid/liquid_flowing>);
+new FluidBuilder(true, 0x66ccff, <resource:contenttweaker:fluid/liquid>, <resource:contenttweaker:fluid/liquid_flowing>);
 
 ```
 
