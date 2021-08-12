@@ -29,11 +29,11 @@ new FluidBuilder(true, 0x66ccff, <resource:contenttweaker:fluid/liquid>, <resour
 
 | 方法及参数 | 例子 | 描述 |
 | ---- | ----- | ---- |
-| `density(density as int)` | `.density(1400);` | 密度，默认值为 1000 |
+| `density(density as int)` | `.density(1400)` | 密度，默认值为 1000 |
 | `gaseous()` | `.gaseous()` | 类似气体 |
-| `luminosity(luminosity as int)` | `.luminosity(15);` | 亮度，默认值为 0 |
-| `temperature(temperature as int)` | `.temperature(500);` | 温度，默认值为 300 |
-| `viscosity(viscosity as int)` | `.viscosity(800);` | 亮度，默认值为 1000 |
+| `luminosity(luminosity as int)` | `.luminosity(15)` | 亮度，默认值为 0 |
+| `temperature(temperature as int)` | `.temperature(500)` | 温度，默认值为 300 |
+| `viscosity(viscosity as int)` | `.viscosity(800)` | 亮度，默认值为 1000 |
 
 ## 注册流体
 
@@ -58,9 +58,9 @@ CoT 创建流体后，还会创建装有该流体的桶物品，这两个都需�
 
 // 静止和流动的流体其实是两种流体，你都需要加上标签
 <tag:fluids:minecraft:water>.add(<fluid:contenttweaker:generic_fluid>);
-<tag:fluids:minecraft:water>.add(<fluid:contenttweaker:generic_fluid_flowing>)
+<tag:fluids:minecraft:water>.add(<fluid:contenttweaker:generic_fluid_flowing>);
 ```
 
-标签产生的行为见：[https://minecraft.fandom.com/zh/wiki/%E6%A0%87%E7%AD%BE#.E6.B5.81.E4.BD.93]
+标签产生的行为见：https://minecraft.fandom.com/zh/wiki/%E6%A0%87%E7%AD%BE#.E6.B5.81.E4.BD.93
 
 你可以发现，加上水标签后，实体是会被这个流体推动了，但还有一堆其他特性，你可能需要斟酌一下要不要加上标签。
