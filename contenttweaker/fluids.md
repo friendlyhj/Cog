@@ -37,7 +37,7 @@ new FluidBuilder(true, 0x66ccff, <resource:contenttweaker:fluid/liquid>, <resour
 
 ## 注册流体
 
-当你所有参数都设置完了，可以调用 `build(name as string)` 方法来注册物品，参数为这个方块的注册名，只允许包含阿拉伯数字、小写字母和下划线 `_`。
+当你所有参数都设置完了，可以调用 `build(name as string)` 方法来注册流体，参数为这个流体的注册名，只允许包含阿拉伯数字、小写字母和下划线 `_`。
 
 ## lang key
 
