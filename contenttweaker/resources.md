@@ -18,13 +18,15 @@ CoT 支持以下资源包加载模组：
 
 ## 语言文件
 
+Minecraft 是一个面向全球的游戏，它支持本地化，就是物品/方块/流体的名字在不同语言设置下不同，这个是通过语言文件实现的。
+
 CoT 不会自动生成语言文件，需要你自行添加。一般而言，你需要一份英文和中文的语言文件。
 
 创建 `<资源包路径>/assets/contenttweaker/lang/en_us.json` 和 `<资源包路径>/assets/contenttweaker/lang/zh_cn.json`。
 
 如果你使用 OpenLoader，资源包路径为 `.minecraft/openloader/resources/contenttweaker`。
 
-语言文件是一个键-值映射，键在这里会被叫做非本地化名、lang key、Translation key。键的内容是 `<block|item|fluid>.contenttweaker.<名字>` 语言文件是 json 格式，json 的格式在此不多赘述。
+语言文件是一个键-值映射，键在这里会被叫做非本地化名、lang key、Translation key。键的内容是 `<block|item|fluid>.contenttweaker.<名字>` 语言文件是 json 文件，json 的格式在此不多赘述。
 
 ```json
 {
