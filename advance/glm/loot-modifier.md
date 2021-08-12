@@ -37,7 +37,7 @@ ILootModifier（战利品修饰器）(`crafttweaker.api.loot.modifiers.ILootModi
 
 ### 可用条件
 
-```less
+```kotlin
 import crafttweaker.api.loot.modifiers.CommonLootModifiers;
 import crafttweaker.api.loot.modifiers.ILootModifier;
 
@@ -46,10 +46,42 @@ import crafttweaker.api.loot.modifiers.ILootModifier;
 
 val addIronIngot as ILootModifier = CommonLootModifiers.add(<item:minecraft:iron_ingot>);
 
+// 返回给战利品表抽奖结果有几率添加一个指定物品的修饰器
+// CommonLootModifiers.addWithChance(stack as MCWeightedItemStack) as ILootModifier
+// 物品 % 几率
+val addIronIngotHalfChance = CommonLootModifiers.addWithChance(<item:minecraft:iron_ingot> % 50);
+
 // 返回给战利品表抽奖结果添加多种指定物品的修饰器
 // CommonLootModifiers.addAll(stack as IItemStack[]) as ILootModifier
 
+// 返回给战利品表抽奖结果添加多种指定物品与概率的修饰器
+// CommonLootModifiers.addAllWithChance(stacks as MCWeightedItemStack[]) as ILootModifier
+val foo = CommonLootModifiers.addAllWithChance([<item:minecraft:honey_bottle> % 50, <item:minecraft:dried_kelp> % 13]);
+
+// 添加物品，数量为两个值之间，均匀分布
+// CommonLootModifiers.addWithRandomAmount(stack as IItemStack, min as int, max as int) as ILootModifier
+val abc = CommonLootModifiers.addWithRandomAmount(<item:minecraft:conduit>, 2, 9);
+
+// 添加物品，但根据特定附魔等级，会额外再多掉落一些物品。如果你需要支持时运什么的，请用这个
+// 物品数量与附魔等级的关系有三种算法
+// 二项分布，原版用于煤矿石和红石矿石等
+// 额外掉落数量为 附魔等级 + extra 和 p 的二项分布。
+// CommonLootModifiers.addWithBinomialBonus(enchantment as MCEnchantment, extra as int, p as float, stack as IItemStack) as ILootModifier
+val bar = CommonLootModifiers.addWithBinomialBonus(<enchantment:minecraft:fortune>, 3, 0.5714286, <item:minecraft:wheat_seeds>);
+// 均匀分布
+// 额外掉落数量为 0 至 附魔等级 × Multiplier 的均匀分布。
+// CommonLootModifiers.addWithUniformBonus(enchantment as MCEnchantment, multiplier as int, stack as IItemStack) as ILootModifier
+val xyz = CommonLootModifiers.addWithUniformBonus(<enchantment:minecraft:fortune>, 1, <item:minecraft:glowstone_dust>);
+// 原版默认矿物掉落的分布，原版用于钻石矿石等
+// 即有1/(附魔等级+2)几率数量改为原来的×(2至(附魔等级+1))，有2/(魔咒等级+2)几率不变。
+val moreCoal = CommonLootModifiers.addWithOreDropsBonus(<enchantment:minecraft:fortune>, <item:minecraft:coal>);
+
 val addIronIngotAndApple as ILootModifier = CommonLootModifiers.add([<item:minecraft:iron_ingot>, <item:minecraft:apple>]);
+
+// 和上面的相同，只不过可以一次添加多种物品
+// CommonLootModifiers.addAllWithBinomialBonus(enchantment as MCEnchantment, extra as int, p as float, stacks as IItemStack[]) as ILootModifier
+// CommonLootModifiers.addAllWithOreDropsBonus(enchantment as MCEnchantment, stacks as IItemStack[]) as ILootModifier
+// CommonLootModifiers.addAllWithUniformBonus(enchantment as MCEnchantment, multiplier as int, stacks as IItemStack[]) as ILootModifier
 
 // 返回删除所有战利品表抽奖结果的修饰器
 // CommonLootModifiers.clearLoot() as ILootModifier
@@ -88,11 +120,16 @@ val replaceCarrotWithPotato as ILootModifier = CommonLootModifiers.replaceWith(<
 
 // 例子调用了前面定义的修饰器，则为先删除全部再加个铁锭
 val clearThenAddIronIngot as ILootModifier = CommonLootModifiers.chaining([clearLoot, addIronIngot]);
+
+// 连接一个或多个修饰器，不过第一个已经确定好是清除原有物品的修饰器了
+// CommonLootModifiers.clearing(modifiers as ILootModifier[]) as ILootModifier
+// 这个和上面一个例子是等价的
+val clearThenAddIronIngot2 as ILootModifier = CommonLootModifiers.clearing(addIronIngot);
 ```
 
 ## LootContext
 
-LootContext 包含了当前战利品表的当前背景，他有这些 Getter。注意不是有些 Getter 返回的可能是 null。这也很好理解，对于方块掉落时的战利品抽奖，你不可能获取表示实体伤害类型的 DamageSource。所以这些 Getter 返回的大多是可空类型，记得强转为非空类型！
+LootContext 包含了当前战利品表的当前背景，他有这些 Getter。注意不是有些 Getter 返回的可能是 null。这也很好理解，对于方块掉落时的战利品抽奖，你不可能获取表示实体伤害类型的 DamageSource。
 
 | Name | Type | Description |
 |------|------|-------------|
@@ -109,9 +146,8 @@ LootContext 包含了当前战利品表的当前背景，他有这些 Getter。�
 | thisEntity | [MCEntity](/vanilla/api/entity/MCEntity)? |  当前实体 |
 | tileEntity | [MCTileEntity](/vanilla/api/tileentity/MCTileEntity)? | 当前破坏方块内部的 TileEntity |
 | tool | [IItemStack](/vanilla/api/items/IItemStack) |  破坏方块所用的工具 |
-| world | [MCWorld](/vanilla/api/world/MCWorld)? | 当前世界 |
-
-Tip: 往往你需要使修改结果随机，比如实体掉落 0 ~ 3 个物品，你需要一个随机数生成器 [Random](https://docs.blamejared.com/1.16/en/vanilla/api/util/Random/)，它可以从 MCWorld 中获取，即 `currentContext.world.random`。
+| world | [MCServerWorld](/vanilla/api/world/MCServerWorld) | 当前世界 |
+| random | [Random](https://docs.blamejared.com/1.16/en/vanilla/api/util/Random/) | 进行战利品表抽奖用的随机数生成器 |
 
 ### 例子
 
