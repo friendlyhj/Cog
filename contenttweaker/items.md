@@ -62,7 +62,7 @@ new ItemBuilder()
     .withAttackDamage(10.0F) // 伤害值
     .withAttackSpeed(5.0F) // 攻击速度
     .withDurabilityCostAttack(1) // 用它打怪掉几点耐久，默认值为 2，一般普通工具为 2，剑为 1
-    .withDurabilityCostMining(1); // 用它挖方块掉几点耐久，默认值为 0
+    .withDurabilityCostMining(1) // 用它挖方块掉几点耐久，默认值为 0
     .withToolType(<tooltype:pickaxe>, 2, 3.0f) // 镐，挖掘等级为 2，挖掘速度为 3.0
     .build("my_tool");
 ```

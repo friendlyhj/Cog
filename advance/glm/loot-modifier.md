@@ -9,7 +9,7 @@ ILootModifier（战利品修饰器）(`crafttweaker.api.loot.modifiers.ILootModi
 
 你可以对这个 List 进行删改，然后依旧返回这个 List。亦或是返回一个新的 List 从而完全接管这个战利品表。
 
-```less
+```kotlin
 // 这个修饰符由于直接返回了 loot list，而并没有修改，所以实际上没啥用
 (loots, currentContext) => loots
 
