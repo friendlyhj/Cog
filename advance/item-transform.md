@@ -39,4 +39,7 @@ val a = <item:minecraft:diamond_pickaxe>.transformCustom("level_down", (stack) =
 <item:minecraft:diamond_axe>.reuse();
 <item:minecraft:diamond_axe>.transformDamage(5);
 <item:minecraft:diamond_pickaxe>.transformReplace(<item:minecraft:iron_pickaxe>);
+
+// 我想你使用耗耐久的合成，肯定也要任何耐久的工具都能用于合成
+<item:minecraft:diamond_axe>.anyDamage().transformDamage(5);
 ```
