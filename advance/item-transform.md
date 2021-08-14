@@ -23,7 +23,7 @@
 ```javascript
 val a = <item:minecraft:diamond_pickaxe>.transformCustom("level_down", (stack) => <item:minecraft:iron_pickaxe>);
 
-// 现在这个金镐参与合成后也会变成铁镐了
+// 现在这个金镐参与合成后也会变成铁镐了.
 <item:minecraft:golden_pickaxe>.transform(a.transformer);
 ```
 
