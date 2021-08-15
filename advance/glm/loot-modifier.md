@@ -133,20 +133,20 @@ LootContext 包含了当前战利品表的当前背景，他有这些 Getter。�
 
 | Name | Type | Description |
 |------|------|-------------|
-| blockState | [MCBlockState](/vanilla/api/blocks/MCBlockState)? | 当前破坏的方块状态 |
-| damageSource | [DamageSource](/vanilla/api/util/DamageSource)? | 造成当前实体死亡的伤害类型 |
-| directKillerEntity | [MCEntity](/vanilla/api/entity/MCEntity)? |  杀死当前实体的直接实体，如果玩家用箭射死一个实体，这个 Getter 返回的是箭 |
+| blockState | [MCBlockState](https://docs.blamejared.com/1.16/en/vanilla/api/blocks/MCBlockState)? | 当前破坏的方块状态 |
+| damageSource | [DamageSource](https://docs.blamejared.com/1.16/en/vanilla/api/util/DamageSource)? | 造成当前实体死亡的伤害类型 |
+| directKillerEntity | [MCEntity](https://docs.blamejared.com/1.16/en/vanilla/api/entity/MCEntity)? |  杀死当前实体的直接实体，如果玩家用箭射死一个实体，这个 Getter 返回的是箭 |
 | explosionRadius | float | 造成方块破坏或实体死亡的爆炸的半径 |
-| killerEntity | [MCEntity](/vanilla/api/entity/MCEntity)? | 杀死这个实体的实体，注意会杀死实体的不只有玩家 |
-| lastDamagePlayer | [MCPlayerEntity](/vanilla/api/entity/MCPlayerEntity)? |  最后一次对该实体造成伤害的玩家 |
-| lootTableId | [MCResourceLocation](/vanilla/api/util/MCResourceLocation) | 当时的战利品表 ID |
+| killerEntity | [MCEntity](https://docs.blamejared.com/1.16/en/vanilla/api/entity/MCEntity)? | 杀死这个实体的实体，注意会杀死实体的不只有玩家 |
+| lastDamagePlayer | [MCPlayerEntity](https://docs.blamejared.com/1.16/en/vanilla/api/entity/MCPlayerEntity)? |  最后一次对该实体造成伤害的玩家 |
+| lootTableId | [MCResourceLocation](https://docs.blamejared.com/1.16/en/vanilla/api/util/MCResourceLocation) | 当时的战利品表 ID |
 | lootingModifier | int | 当时的战利品表修饰符 ID |
 | luck | float | 玩家的幸运值 |
-| origin | [MCVector3d](/vanilla/api/util/MCVector3d)? |  Gets the origin, or location, of the loot roll, if present; null otherwise. |
-| thisEntity | [MCEntity](/vanilla/api/entity/MCEntity)? |  当前实体 |
-| tileEntity | [MCTileEntity](/vanilla/api/tileentity/MCTileEntity)? | 当前破坏方块内部的 TileEntity |
-| tool | [IItemStack](/vanilla/api/items/IItemStack) |  破坏方块所用的工具 |
-| world | [MCServerWorld](/vanilla/api/world/MCServerWorld) | 当前世界 |
+| origin | [MCVector3d](https://docs.blamejared.com/1.16/en/vanilla/api/util/MCVector3d)? |  Gets the origin, or location, of the loot roll, if present; null otherwise. |
+| thisEntity | [MCEntity](https://docs.blamejared.com/1.16/en/vanilla/api/entity/MCEntity)? |  当前实体 |
+| tileEntity | [MCTileEntity](https://docs.blamejared.com/1.16/en/vanilla/api/tileentity/MCTileEntity)? | 当前破坏方块内部的 TileEntity |
+| tool | [IItemStack](https://docs.blamejared.com/1.16/en/vanilla/api/items/IItemStack) | 破坏方块所用的工具 |
+| world | [MCServerWorld](https://docs.blamejared.com/1.16/en/vanilla/api/world/MCServerWorld) | 当前世界 |
 | random | [Random](https://docs.blamejared.com/1.16/en/vanilla/api/util/Random/) | 进行战利品表抽奖用的随机数生成器 |
 
 ### 例子
