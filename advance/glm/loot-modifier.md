@@ -133,7 +133,7 @@ LootContext 包含了当前战利品表的当前背景，他有这些 Getter。�
 
 | Name | Type | Description |
 |------|------|-------------|
-| blockState | [MCBlockState](https://docs.blamejared.com/1.16/en/vanilla/api/blocks/MCBlockState)? | 当前破坏的方块状态 |
+| blockState | [MCBlockState](https://docs.blamejared.com/1.16/en/vanilla/api/block/MCBlockState)? | 当前破坏的方块状态 |
 | damageSource | [DamageSource](https://docs.blamejared.com/1.16/en/vanilla/api/util/DamageSource)? | 造成当前实体死亡的伤害类型 |
 | directKillerEntity | [MCEntity](https://docs.blamejared.com/1.16/en/vanilla/api/entity/MCEntity)? |  杀死当前实体的直接实体，如果玩家用箭射死一个实体，这个 Getter 返回的是箭 |
 | explosionRadius | float | 造成方块破坏或实体死亡的爆炸的半径 |
