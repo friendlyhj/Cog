@@ -38,7 +38,7 @@ craftingTable.addShaped("recipe_test_2", <item:minecraft:gold_ingot>, [
 * inputBox 是材料的数组，只有一层中括号
 
 ```javascript
-craftingTable.addShapeless("recipe_name", <item:minecraft:sand>, [<item:minecraft:diamond>, <tag:items:minecraft:planks>]
+craftingTable.addShapeless("recipe_name", <item:minecraft:sand>, [<item:minecraft:diamond>, <tag:items:minecraft:planks>]);
 ```
 
 ### 镜像合成
