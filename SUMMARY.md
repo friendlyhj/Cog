@@ -14,6 +14,7 @@
 * [原版配方修改](recipe/vanilla-tweak.md)
 * [模组配方修改](recipe/mod-tweak.md)
 * [通用配方修改](recipe/generic-recipe-tweak.md)
+* [配方材料替换](recipe/replacer.md)
 
 ## ZenCode <a id="zencode"></a>
 
