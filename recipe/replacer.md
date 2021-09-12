@@ -54,19 +54,19 @@
 
 `replaceFully` 则是需要材料完全匹配，上面的例子如果你使用 `replaceFully` 则不会被替换。
 
-### 执行
+## 执行
 
 现在你设置好了替换目标、额外排除的内容和替换规则，你就可以最后调用 `execute` 无参方法使 Replacer 开始工作。**一定要调用这个方法，否则不会干活的。**
 
-### 抑制警告
+## 抑制警告
 
 有很多配方不支持材料替换，别的模组的机器没做支持就先不提了。即使是普通工作台配方，也会有一些模组不讲武德注册了一些特殊的配方，CrT 无法处理它们，只能报一些警告告诉你部分配方无法被替换。你可以用 `excluding` 方法告诉 Replacer 要跳过这些配方，又或者直接调用 `suppressWarnings` 方法抑制这些警告。
 
-### 尽可能少创建 Replacer
+## 尽可能少创建 Replacer
 
 是的，你最好尽可能少的创建 Replacer。`execute` 方法将会遍历所有符合条件的配方。比如 `Replacer.forTypes(craftingTable)` 就会遍历所有工作台配方，而工作台配方有多少无需多言了。如果你创建了五个这样的 Replacer 就会遍历五次工作台配方，这会造成大量的性能浪费。你应该创建一个 Replacer，而设置多个替换规则。
 
-### 例子
+## 例子
 
 ```kotlin
 import crafttweaker.api.recipe.Replacer;
