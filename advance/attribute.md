@@ -61,7 +61,7 @@ import crafttweaker.api.entity.AttributeOperation;
 
 分别代表原版属性 NBT 的 Operation 的 0 1 2。具体的运算含义，也可见原版 wiki。
 
-### 为特定物品添加属性修饰器
+## 为特定物品添加属性修饰器
 
 可是如果你不想要全局，只是要给特定物品添加。比如一个配方输出为有更多伤害的钻石剑。你需要使用 `withAttributeModifier` 方法。
 
