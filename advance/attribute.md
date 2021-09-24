@@ -29,6 +29,8 @@
 * slotTypes: MCEquipmentSlotType[] 这个物品位于哪里才会给实体属性进行修改。`/ct dump equipmentSlotType` 可以导出所有装备位置（主副手和四个护甲槽）
 
 ```kotlin
+import crafttweaker.api.entity.AttributeOperation;
+
 <tag:items:forge:ingots>.asIIngredient().addGlobalAttributeModifier(<attribute:minecraft:generic.attack_damage>, "Extra Power", 10, AttributeOperation.ADDITION, [<equipmentslottype:mainhand>]);
 ```
 
@@ -64,6 +66,8 @@
 可是如果你不想要全局，只是要给特定物品添加。比如一个配方输出为有更多伤害的钻石剑。你需要使用 `withAttributeModifier` 方法。
 
 ```kotlin
+import crafttweaker.api.entity.AttributeOperation;
+
 // IItemStack.withAttributeModifier(attribute as Attribute, name as string, value as double, operation as AttributeOperation, slotTypes as MCEquipmentSlotType[], preserveDefaults as boolean) as IItemStack
 // IItemStack.withAttributeModifier(attribute as Attribute, uuid as string, name as string, value as double, operation as AttributeOperation, slotTypes as MCEquipmentSlotType[], preserveDefaults as boolean) as IItemStack
 
