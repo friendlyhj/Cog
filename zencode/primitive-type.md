@@ -43,6 +43,9 @@ Note：ZenCode 的 `as` 关键词可以用 `:` 替代。但为了沿袭 ZenScrip
 | `endsWith(head as string)` | `bool` | 是否以给定字符串结尾 |
 | `lpad(length as usize, c as char)` | `string` | 如果该字符串长度不足给定长度，则在左边加上给定字符补齐 |
 | `rpad(length as usize, c as char)` | `string` | 如果该字符串长度不足给定长度，则在右边加上给定字符补齐 |
+| `matchesRegex(regex as string)` | `bool` | 字符串是否匹配给定正则表达式 |
+| `wrap(with as string, escape as bool)` | `string` | 给字符串左右两边加上 with 字符串，如果 `escape` 参数为 `true`，则会同时把字符串的控制字符转义 |
+| `quoteAndEscape()` | `string` | 给字符串左右两边加上双引号，同时把字符串的控制字符转义 |
 
 ### 示例
 
