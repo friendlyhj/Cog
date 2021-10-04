@@ -27,9 +27,39 @@ Note：ZenCode 的 `as` 关键词可以用 `:` 替代。但为了沿袭 ZenScrip
 
 此外，字符串可以使用 `==` （与 `equals` 方法等价）、使用 `+` 操作符来拼接字符串，使用 `length` getter 获取字符串长度、`isEmpty` getter 检查是否为空字符串（`""`）。字符串同时也可以视为一个 `char` 数组。字符串有如下几个方法：
 
-* `charAt`
-* `trim`
-* `toLowerCase`
-* `toUpperCase`
-* `split`
-* `contains`
+| 方法与参数 | 返回值 | 作用 |
+| :--- | :--- | :--- |
+| `indexOf(c as char)` | `usize?` | 返回该字符串第一个出现给定字符的索引，如果该字符串没有该字符，则返回 `null` |
+| `indexOf(c as char, from as int` | `usize?` | 返回该字符串从给定索引开始数第一个出现给定字符的索引，如果该字符串没有该字符，则返回 `null` |
+| `indexOf(s as string)` | `usize?` | 返回该字符串第一个出现给定字符串的索引，如果该字符串没有给定字符串，则返回 `null` |
+| `indexOf(s as string, from as int` | `usize?` | 返回该字符串从给定索引开始数第一个出现给定字符串的索引，如果该字符串没有给定字符串，则返回 `null` |
+| `lastIndexOf(c as char)` | `usize?` | 返回该字符串最后一个出现给定字符的索引，如果该字符串没有该字符，则返回 `null` |
+| `lastIndexOf(c as char, until as int)` | `usize?` | 返回该字符串直到给定索引为止最后一个出现给定字符的索引，如果该字符串没有该字符，则返回 `null` |
+| `lastIndexOf(s as string)` | `usize?` | 返回该字符串最后一个出现给定字符串的索引，如果该字符串没有给定字符串，则返回 `null` |
+| `lastIndexOf(s as string, until as int)` | `usize?` | 返回该字符串直到给定索引为止最后一个出现给定字符串的索引，如果该字符串没有给定字符串，则返回 `null` |
+| `split(delimiter as char)` | `string[]` | 将字符串分割成多个字符串，参数为分隔符 |
+| `trim()` | `string` | 将字符串左右的空白字符（空格，制表符，换行等）删除 |
+| `startsWith(head as string)` | `bool` | 是否以给定字符串开头 |
+| `endsWith(head as string)` | `bool` | 是否以给定字符串结尾 |
+| `lpad(length as usize, c as char)` | `string` | 如果该字符串长度不足给定长度，则在左边加上给定字符补齐 |
+| `rpad(length as usize, c as char)` | `string` | 如果该字符串长度不足给定长度，则在右边加上给定字符补齐 |
+
+### 示例
+
+```kotlin
+var str = "This is a test string!";
+
+println(str.length); // 长度
+
+if ("es" in str) { // 检测一个字符串是否包含另一个字符串
+  println(str + " contains es!");
+}
+
+if (str.indexOf("es") != null) {
+  println(str  + " contains 'es' at position: " + str.indexOf("es"));
+}
+
+for st in str.split(" ") {
+  println(st); // 依次打印 This, is, a, test, string!
+}
+```
