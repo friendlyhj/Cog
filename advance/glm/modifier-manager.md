@@ -94,7 +94,7 @@ var lcb = LootConditionBuilder.create() // 创建一个空的
     // 等等，你说战利品表 ID 从哪看？输入 `/ct dump loot_tables` 可以查看游戏内所有战利品表 ID
     // 例子调用 LootTableId 类的 withTableId 方法设定这个条件指定的战利品表
     .add<LootTableId>(condition => {
-        condition.withTableId(<resource:minecraft:chests/desert_pyramid>)
+        condition.withTableId(<resource:minecraft:chests/desert_pyramid>);
     })
     // 同理，再添加 ILootConditionBuilder，为 RandomChance
     // 这里的 lambda 表达式参数即为 RandomChance
@@ -104,7 +104,7 @@ var lcb = LootConditionBuilder.create() // 创建一个空的
     });
 
 // 注册战利品修饰符，这个修饰符只有战利品表是沙漠神殿和 70% 几率生效，效果是添加一本书。
-loot.modifiers.register("add_book", lcb, CommonLootModifiers.add(<item:minecraft:book>);)
+loot.modifiers.register("add_book", lcb, CommonLootModifiers.add(<item:minecraft:book>));
 ```
 
 铁矿在下雨的时候将直接会掉落铁锭，并排除精准采集的情况。
