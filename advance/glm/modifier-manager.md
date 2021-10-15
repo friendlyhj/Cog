@@ -27,6 +27,7 @@ loot.modifiers.registerUnconditional("remove_thermal_items", CommonLootModifiers
 你可以使用战利品条件来确定什么时候执行以下的战利品修饰器，可使用以下方法。
 
 `loot.modifiers.register(name as string, conditions as ILootCondition[], modifier as ILootModifier)`
+
 `loot.modifiers.register(name as string, builder as LootConditionBuilder, modifier as ILootModifier)`
 
 ### 战利品条件
