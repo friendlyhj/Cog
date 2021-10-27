@@ -2,7 +2,7 @@
 
 ## 导出
 
-你可以用指令 `/ct dump items` 或者 `/ct dumpdumpBrackets` 导出游戏内所有物品 ID。前者生成在 crafttweaker.log 里，后者在 ct\_dumps/item.txt
+你可以用指令 `/ct dump items` 或者 `/ct dump_brackets` 导出游戏内所有物品 ID。前者生成在 crafttweaker.log 里，后者在 ct\_dumps/item.txt
 
 ## Import
 
