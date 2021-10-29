@@ -60,7 +60,7 @@ craftingTable.addShapeless("recipe_name", <item:minecraft:sand>, [<item:minecraf
 
 ```javascript
 craftingTable.removeRecipe(<item:minecraft:iron_ingot>); // 删除所有（成品为）铁锭的配方
-craftingTable.removeRecipe("minecraft:crafting_table"); // 删除 ID 为 minecraft:crafting_table 的配方
+craftingTable.removeByName("minecraft:crafting_table"); // 删除 ID 为 minecraft:crafting_table 的配方
 craftingTable.removeRecipeByInput(<item:minecraft:iron_ingot>); // 删除所有铁锭参与的配方
 craftingTable.removeByMod("thermal"); // 删除所有热力系列的配方
 craftingTable.removeByRegex("minecraft:.*"); // 删除所有 ID 匹配指定正则的配方
