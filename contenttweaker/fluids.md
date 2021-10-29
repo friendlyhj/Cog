@@ -33,7 +33,7 @@ new FluidBuilder(true, 0x66ccff, <resource:contenttweaker:fluid/liquid>, <resour
 | `gaseous()` | `.gaseous()` | 类似气体 |
 | `luminosity(luminosity as int)` | `.luminosity(15)` | 亮度，默认值为 0 |
 | `temperature(temperature as int)` | `.temperature(500)` | 温度，默认值为 300 |
-| `viscosity(viscosity as int)` | `.viscosity(800)` | 亮度，默认值为 1000 |
+| `viscosity(viscosity as int)` | `.viscosity(800)` | 黏度，默认值为 1000 |
 
 ## 注册流体
 
