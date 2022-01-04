@@ -139,7 +139,7 @@ loot.modifiers.register(
             not.withCondition<TableBonus>(condition => {
                 condition.withEnchantment(<enchantment:minecraft:silk_touch>);
                 condition.withChances([1.0f]);
-            })
+            });
         }),
     // 将原有铁矿石掉落替换为铁锭
     CommonLootModifiers.replaceWith(<tag:items:ores/iron>, <item:minecraft:iron_ingot>); 
