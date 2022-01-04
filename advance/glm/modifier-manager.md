@@ -144,7 +144,6 @@ loot.modifiers.register(
     // 将原有铁矿石掉落替换为铁锭
     CommonLootModifiers.replaceWith(<tag:items:forge:ores/iron>, <item:minecraft:iron_ingot>)
 );
-);
 ```
 
 是的，就像上文例子那样，你基本不需要自己重新用 lambda 写一个 ILootCondition 或 ILootModifier。通过组合内置战利品条件和战利品修饰符，你就能满足 90% 的需求。
