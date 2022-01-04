@@ -112,7 +112,7 @@ loot.modifiers.register("add_book", lcb, CommonLootModifiers.add(<item:minecraft
 
 ```javascript
 import crafttweaker.api.loot.conditions.LootConditionBuilder;
-import crafttweaker.api.loot.conditions.vanilla.TableBonus;
+import crafttweaker.api.loot.conditions.vanilla.MatchTool;
 import crafttweaker.api.loot.conditions.vanilla.WeatherCheck;
 import crafttweaker.api.loot.conditions.crafttweaker.Not;
 import crafttweaker.api.loot.conditions.vanilla.BlockStateProperty;
@@ -133,16 +133,17 @@ loot.modifiers.register(
         // 对下面的条件取非
         // 我们需要跳过精准采集，即为给下面匹配精准采集的条件取非
         .add<Not>(not => {
-            // 如果是精准采集，则成功概率为 100%
-            // 下面的 withChances 代表每级附魔的成功概率
-            // 由于精准采集只有一级，这里便填绝对成功
-            not.withCondition<TableBonus>(condition => {
-                condition.withEnchantment(<enchantment:minecraft:silk_touch>);
-                condition.withChances([1.0f]);
+            not.withCondition<MatchTool>(condition => { // 匹配工具
+                condition.withPredicate(predicate => { // 设置工具需要满足的条件
+                    // 工具需要精准采集附魔
+                    // 对于其他附魔，可以在后面的 lambda 表达式中设置所需等级等信息
+                    predicate.withEnchantmentPredicate(<enchantment:minecraft:silk_touch>, it => {});
+                });
             });
         }),
     // 将原有铁矿石掉落替换为铁锭
-    CommonLootModifiers.replaceWith(<tag:items:ores/iron>, <item:minecraft:iron_ingot>)
+    CommonLootModifiers.replaceWith(<tag:items:forge:ores/iron>, <item:minecraft:iron_ingot>)
+);
 );
 ```
 
