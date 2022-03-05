@@ -1,5 +1,7 @@
 # 战利品修饰器
 
+**战利品修饰器只是描述了如何修改战利品表。你写好一个修饰器，还需要注册它，确定它会影响那些战利品表后才会生效！如何注册见后面的章节！**
+
 ILootModifier（战利品修饰器）(`crafttweaker.api.loot.modifiers.ILootModifier`) 是一个函数式接口，他有两个参数：
 
 * `loots as List<IItemStack>` 已经由战利品表抽奖出的结果
