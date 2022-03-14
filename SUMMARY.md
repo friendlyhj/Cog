@@ -60,4 +60,5 @@
 * [物品](contenttweaker/items.md)
 * [方块](contenttweaker/blocks.md)
 * [流体](contenttweaker/fluids.md)
+* [创造标签](contenttweaker/item-group.md)
 * [高级运用](contenttweaker/advanced-function.md)
