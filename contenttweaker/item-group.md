@@ -3,6 +3,7 @@
 CoT 还允许你创建一个创造标签。
 
 ```csharp
+#loader contenttweaker
 import crafttweaker.api.item.ItemGroup;
 import crafttweaker.api.BracketHandlers;
 
