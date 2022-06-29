@@ -9,6 +9,7 @@ LootModifierManager 管理了所有的战利品表修饰器，前两章的修改
 ```javascript
 import crafttweaker.api.loot.modifiers.CommonLootModifiers;
 import crafttweaker.api.item.IngredientAny;
+import crafttweaker.api.item.IItemStack;
 
 // loot.modifiers.registerUnconditional(name as string, modifier as ILootModifier)
 
@@ -18,8 +19,8 @@ loot.modifiers.registerUnconditional("loot_nuke", CommonLootModifiers.clearLoot(
 // 删除在所有战利品表内在热力系列模组的物品
 // 再提一遍，这里包括了方块、实体掉落物，该脚本同时会使热力系列的方块均无掉落物！
 loot.modifiers.registerUnconditional("remove_thermal_items", CommonLootModifiers.remove(
-    IngredientAny.getInstance().onlyIf("thermal_only", (stack) => stack.owner == "thermal")
-);
+    IngredientAny.getInstance().onlyIf("thermal_only", (stack as IItemStack) => stack.owner == "thermal")
+));
 ```
 
 ## 注册带条件战利品表修饰器
