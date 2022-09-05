@@ -67,5 +67,5 @@ for st in str.split(" ") {
 }
 
 println(str[1]); // 获取字符串指定索引的字符，将会打印 h
-println(str[1 .. 4]); // 获取字符串子串，索引左开右闭，将会打印 his
+println(str[1 .. 4]); // 获取字符串子串，索引左闭右开，将会打印 his
 ```
