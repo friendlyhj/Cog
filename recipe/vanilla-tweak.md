@@ -112,7 +112,7 @@ furnace.addRecipe("wool2diamond", <item:diamond>, <tag:items:minecraft:wool>, 1.
 ```javascript
 campfire.addRecipe(name, output, input, xp, cookTime);
 
-campfire.addRecipe("wool2diamond", <item:diamond>, <tag:items:minecraft:wool>, 1.0, 100);
+campfire.addRecipe("wool2diamond", <item:minecraft:diamond>, <tag:items:minecraft:wool>, 1.0, 100);
 ```
 
 * name: 字符串，配方名
