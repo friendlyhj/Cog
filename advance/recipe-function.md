@@ -23,11 +23,12 @@
 ```javascript
 import crafttweaker.api.item.IItemStack;
 
-craftingTable.addShaped("tag",<item:minecraft:diamond_pickaxe>,[
+craftingTable.addShaped("pickaxe_upgrade", <item:minecraft:diamond_pickaxe>,[
     [<tag:items:forge:gems/diamond>, <tag:items:forge:gems/diamond>, <tag:items:forge:gems/diamond>],
     [<item:minecraft:air>, <item:minecraft:golden_pickaxe>.anyDamage(), <item:minecraft:air>]],
     (out as IItemStack, ins as IItemStack[][]) => {
-        return out.withTag(ins[1][1].tag);
+        var item as IItemStack = ins[1][1]; // 获取实际使用的金镐物品
+        return item.hasTag ? out.withTag(item.tag) : out; // 如果金镐有 NBT 则返回与其 NBT 相同的输出，否则返回原始输出
     }
 );
 ```
