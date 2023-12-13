@@ -13,7 +13,7 @@
 * `Replacer.forEverything()` 创建一个会影响所有配方的 Replacer，但并非所有配方都允许替换材料，并不推荐使用。
 * `Replacer.forTypes(managers as IRecipeManager...)` 创建一个会修改一个或多个 Recipe Types 下的 Replacer，如 `Replacer.forTypes(craftingTable)` 则是一个只会修改工作台配方的 Replacer。
 * `Replacer.forMods(mods as string...)` 创建只修改一个或多个模组的配方的 Replacer，如 `Replacer.forMods("minecraft")` 是一个只会修改原版配方的 Replacer
-* `Replacer.forOutputs(output as IIngredient, managers as IRecipeManager...)` 创建只会修改输出指定物品的配方，managers 是 Recipe Types 白名单，如 `Replacer.forOutputs(<tag:items:forge:blocks/copper>, craftingTable)` 只会修改各模组铜块（因为使用了 Tag）的工作台配方，managers 参数可省略，那就会尝试修改所有 Recipe Types 的指定物品的配方
+* `Replacer.forOutput(output as IIngredient, managers as IRecipeManager...)` 创建只会修改输出指定物品的配方，managers 是 Recipe Types 白名单，如 `Replacer.forOutput(<tag:items:forge:blocks/copper>, craftingTable)` 只会修改各模组铜块（因为使用了 Tag）的工作台配方，managers 参数可省略，那就会尝试修改所有 Recipe Types 的指定物品的配方
 * `Replacer.forRegexRecipes(regex as string)` 创建一个只会修改 ID 符合指定正则的 Replacer，如 `Replacer.forRegexRecipes("minecraft:wooden_.*")`
 * `Replacer.forRegexTypes(regex as string)` 创建一个 ID 符合正则的 Recipe Type 以下的配方，如 `Replacer.forRegexTypes("minecraft:[a-z]*ing")`，虽然也只有工作台 ID 匹配这个正则
 * `Replacer.forRecipes(recipes as WrapperRecipe[])` 创建只会修改特定配方的 Replacer，这里的参数是实打实的配方类，不是配方 ID，往往你需要 `IRecipeManager` 的 `getRecipeByName` 等方法获取。例子：`Replacer.forRecipes(craftingTable.getRecipeByName("minecraft:emerald_block"));`
